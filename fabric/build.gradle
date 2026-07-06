@@ -1,0 +1,113 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${fabric_loom_version}"
+    id 'maven-publish'
+}
+
+base {
+    archivesName = "villagerphrases-fabric"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir project(':common').sourceSets.main.resources.srcDirs
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+    implementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    implementation project(':common')
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    def version = project.version
+    inputs.property "version", version
+    filesMatching("fabric.mod.json") {
+        expand "version": version
+    }
+    doLast {
+        copySpanishLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/es_es.json"))
+        copyFrenchLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/fr_fr.json"))
+        copyGermanLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/de_de.json"))
+        copyPortugueseLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/pt_br.json"))
+    }
+}
+
+def copySpanishLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = [
+        "es_ar", "es_mx", "es_cl", "es_co", "es_uy",
+        "es_ve", "es_ec", "es_pe", "es_cu", "es_do",
+        "es_gt", "es_hn", "es_ni", "es_pa", "es_pr",
+        "es_sv", "es_bo", "es_py"
+    ]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "es_es.json", "${variant}.json"
+        }
+    }
+}
+
+def copyFrenchLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = [
+        "fr_ca", "fr_ch", "fr_be"
+    ]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "fr_fr.json", "${variant}.json"
+        }
+    }
+}
+
+def copyGermanLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    copy {
+        from sourceFile
+        into sourceFile.parentFile
+        rename "de_de.json", "de_at.json"
+    }
+}
+
+def copyPortugueseLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    copy {
+        from sourceFile
+        into sourceFile.parentFile
+        rename "pt_br.json", "pt_pt.json"
+    }
+}
+
+sourcesJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from project(':common').sourceSets.main.output
+    from("LICENSE") { rename { "${it}_${project.name}" } }
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            from components.java
+        }
+    }
+}

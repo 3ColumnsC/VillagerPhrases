@@ -1,0 +1,132 @@
+plugins {
+    id 'net.neoforged.moddev' version '2.0.141'
+    id 'maven-publish'
+}
+
+base {
+    archivesName = "villagerphrases-neoforge"
+}
+
+neoForge {
+    version = project.neoforge_version
+
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        villagerphrases {
+            sourceSet sourceSets.main
+            sourceSet project(':common').sourceSets.main
+        }
+    }
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir project(':common').sourceSets.main.resources.srcDirs
+        }
+    }
+}
+
+dependencies {
+    implementation project(':common')
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    doLast {
+        copySpanishLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/es_es.json"))
+        copyFrenchLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/fr_fr.json"))
+        copyGermanLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/de_de.json"))
+        copyPortugueseLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/pt_br.json"))
+    }
+}
+
+def copySpanishLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = [
+        "es_ar", "es_mx", "es_cl", "es_co", "es_uy",
+        "es_ve", "es_ec", "es_pe", "es_cu", "es_do",
+        "es_gt", "es_hn", "es_ni", "es_pa", "es_pr",
+        "es_sv", "es_bo", "es_py"
+    ]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "es_es.json", "${variant}.json"
+        }
+    }
+}
+
+def copyFrenchLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = [
+        "fr_ca", "fr_ch", "fr_be"
+    ]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "fr_fr.json", "${variant}.json"
+        }
+    }
+}
+
+def copyGermanLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    copy {
+        from sourceFile
+        into sourceFile.parentFile
+        rename "de_de.json", "de_at.json"
+    }
+}
+
+def copyPortugueseLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    copy {
+        from sourceFile
+        into sourceFile.parentFile
+        rename "pt_br.json", "pt_pt.json"
+    }
+}
+
+sourcesJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes([
+                'Implementation-Version': project.version
+        ])
+    }
+    from project(':common').sourceSets.main.output
+    from("LICENSE") { rename { "${it}_${project.name}" } }
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            from components.java
+        }
+    }
+}

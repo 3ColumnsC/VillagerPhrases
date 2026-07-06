@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "villagerphrases",
+	"version": "${version}",
+	"name": "VillagerPhrases",
+	"description": "Adds immersive phrases to villagers when you interact with or walk near them.",
+	"authors": [
+		"3C Team"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/villager-phrases",
+		"issues": "https://github.com/3ColumnsC/VillagerPhrases/issues",
+		"sources": "https://github.com/3ColumnsC/VillagerPhrases"
+	},
+	"license": "MIT",
+	"icon": "assets/villagerphrases/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.threecolumnsstudio.villagerphrases.fabric.VillagerPhrasesFabricClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": ">=0.151.0"
+	}
+}

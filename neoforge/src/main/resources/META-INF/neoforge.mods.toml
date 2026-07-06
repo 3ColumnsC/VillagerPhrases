@@ -1,0 +1,27 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "villagerphrases"
+version = "${file.jarVersion}"
+displayName = "VillagerPhrases"
+authors = "3C Team"
+description = '''
+Adds immersive phrases to villagers when you interact with or walk near them.
+'''
+logoFile = "assets/villagerphrases/icon.png"
+
+[[dependencies.villagerphrases]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.1,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.villagerphrases]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.1.2,)"
+ordering = "NONE"
+side = "CLIENT"
