@@ -64,8 +64,11 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             if (!(entity instanceof Villager villager)) return InteractionResult.PASS;
 
             VillagerPhrasesConfig config = VillagerPhrasesConfig.getInstance();
-            if (config == null || !config.isAnyEnabled() || !config.enableHitPhrases) return InteractionResult.PASS;
+            if (config == null || !config.isAnyEnabled()) return InteractionResult.PASS;
 
+            VillagerPhrasesData.markHit(villager);
+
+            if (!config.enableHitPhrases) return InteractionResult.PASS;
             if (world.getRandom().nextFloat() >= 0.7f) return InteractionResult.PASS;
 
             String profession = villager.getVillagerData().profession()
@@ -84,27 +87,35 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             VillagerPhrasesConfig config = VillagerPhrasesConfig.getInstance();
             if (config == null || !config.isAnyEnabled()) return;
 
+            VillagerPhrasesData.checkDeaths(client.level, client.player, config);
+
             if (client.level.getGameTime() % 100 != 0) return;
 
             List<Villager> nearby = client.level.getEntitiesOfClass(
                 Villager.class,
-                client.player.getBoundingBox().inflate(4)
+                client.player.getBoundingBox().inflate(6)
             );
 
-            if (!nearby.isEmpty() && client.level.getRandom().nextFloat() < 0.4f) {
+            if (!nearby.isEmpty() && client.level.getRandom().nextFloat() < 0.5f) {
                 Villager villager = nearby.get(client.level.getRandom().nextInt(nearby.size()));
                 String profession = villager.getVillagerData().profession()
                     .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
-                boolean isNight = client.level.isDarkOutside();
                 String key;
-                if (isNight && config.enableNightPhrases && client.level.getRandom().nextFloat() < 0.6f) {
+
+                if (client.level.isDarkOutside() && config.enableNightPhrases && client.level.getRandom().nextFloat() < 0.6f) {
                     key = VillagerPhrasesData.nextNightKey(profession, config);
+                    if (key == null) {
+                        key = VillagerPhrasesData.nextProximityKey(profession, config);
+                    }
+                } else if (client.level.isRaining() && config.enableRainPhrases && client.level.getRandom().nextFloat() < 0.6f) {
+                    key = VillagerPhrasesData.nextRainKey(profession, config);
                     if (key == null) {
                         key = VillagerPhrasesData.nextProximityKey(profession, config);
                     }
                 } else {
                     key = VillagerPhrasesData.nextProximityKey(profession, config);
                 }
+
                 if (key != null) {
                     net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, client.player);
                     client.player.sendSystemMessage(msg);
