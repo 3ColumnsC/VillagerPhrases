@@ -360,6 +360,16 @@
     { "key": "villagerphrases.phrase.generic.72", "tags": ["hit"] },
     { "key": "villagerphrases.phrase.generic.73", "tags": ["hit"] },
     { "key": "villagerphrases.phrase.generic.74", "tags": ["hit"] },
-    { "key": "villagerphrases.phrase.generic.75", "tags": ["hit"] }
+    { "key": "villagerphrases.phrase.generic.75", "tags": ["hit"] },
+    { "key": "villagerphrases.phrase.generic.76", "tags": ["rain"] },
+    { "key": "villagerphrases.phrase.generic.77", "tags": ["rain"] },
+    { "key": "villagerphrases.phrase.generic.78", "tags": ["rain"] },
+    { "key": "villagerphrases.phrase.generic.79", "tags": ["rain"] },
+    { "key": "villagerphrases.phrase.generic.80", "tags": ["rain"] },
+    { "key": "villagerphrases.phrase.generic.81", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.82", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.83", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.84", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.85", "tags": ["death"] }
   ]
 }

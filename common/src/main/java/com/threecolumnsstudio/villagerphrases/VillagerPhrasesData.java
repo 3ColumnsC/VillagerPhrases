@@ -10,24 +10,28 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.npc.villager.Villager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.UUID;
 
 public class VillagerPhrasesData {
 
     private static final Map<String, Map<String, List<Phrase>>> PHRASES_BY_TAG = new HashMap<>();
     private static final Map<String, Integer> PROXIMITY_COUNTERS = new HashMap<>();
+    private static final Map<UUID, Long> RECENTLY_HIT = new HashMap<>();
     private static final int HUMOR_EVERY = 3;
+    private static final int DEATH_TRACK_TICKS = 100;
     private static final Random RANDOM = new Random();
-    private static final Set<String> QUERY_TAGS = Set.of("normal", "humor", "night", "hit");
+    private static final Set<String> QUERY_TAGS = Set.of("normal", "humor", "night", "hit", "rain", "death");
 
     public record Phrase(String key, List<String> tags) {}
 
@@ -101,6 +105,38 @@ public class VillagerPhrasesData {
 
     public static String nextHitKey(String profession, VillagerPhrasesConfig config) {
         return pick(profession, "hit");
+    }
+
+    public static String nextRainKey(String profession, VillagerPhrasesConfig config) {
+        return pick(profession, "rain");
+    }
+
+    public static void markHit(Villager villager) {
+        RECENTLY_HIT.put(villager.getUUID(), villager.level().getGameTime());
+    }
+
+    public static void checkDeaths(Level level, Player player, VillagerPhrasesConfig config) {
+        if (!config.enableDeathPhrases) return;
+        long now = level.getGameTime();
+        Iterator<Map.Entry<UUID, Long>> it = RECENTLY_HIT.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<UUID, Long> entry = it.next();
+            if (now - entry.getValue() > DEATH_TRACK_TICKS) {
+                it.remove();
+                continue;
+            }
+            net.minecraft.world.entity.Entity e = level.getEntity(entry.getKey());
+            if (e instanceof Villager villager && villager.isDeadOrDying()) {
+                String profession = villager.getVillagerData().profession()
+                    .unwrapKey().map(k -> k.identifier().getPath()).orElse("generic");
+                String key = pick(profession, "death");
+                if (key != null) {
+                    Component msg = formatMessage(villager, key, player);
+                    player.sendSystemMessage(msg);
+                }
+                it.remove();
+            }
+        }
     }
 
     private static String resolveTag(String profession, VillagerPhrasesConfig config) {
