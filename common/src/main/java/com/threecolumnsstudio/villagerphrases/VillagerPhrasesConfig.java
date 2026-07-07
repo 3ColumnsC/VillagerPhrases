@@ -19,6 +19,8 @@ public class VillagerPhrasesConfig {
     public boolean enableHumorPhrases = true;
     public boolean enableNightPhrases = true;
     public boolean enableHitPhrases = true;
+    public boolean enableRainPhrases = true;
+    public boolean enableDeathPhrases = true;
 
     public static VillagerPhrasesConfig getInstance() {
         return INSTANCE;
@@ -52,6 +54,6 @@ public class VillagerPhrasesConfig {
     }
 
     public boolean isAnyEnabled() {
-        return enableNormalPhrases || enableHumorPhrases || enableNightPhrases || enableHitPhrases;
+        return enableNormalPhrases || enableHumorPhrases || enableNightPhrases || enableHitPhrases || enableRainPhrases || enableDeathPhrases;
     }
 }

@@ -1,6 +1,6 @@
 # VillagerPhrases
 
-Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, and hit responses — fully configurable and client-side.
+Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain and hit responses — fully configurable and client-side.
 
 ![Fabric](https://img.shields.io/badge/Fabric-Supported-green)
 ![NeoForge](https://img.shields.io/badge/NeoForge-Supported-green)
@@ -36,7 +36,9 @@ Villagers respond in different situations:
 | Interact    | Right-click     | enableNormalPhrases     |
 | Proximity   | Stand near      | enableNormalPhrases     |
 | Night       | Proximity       | enableNightPhrases      |
+| Rain        | Proximity       | enableRainPhrases       |
 | Hit         | Attack villager | enableHitPhrases        |
+| Death       | Kill villager   | enableDeathPhrases      |
 
 ---
 
@@ -55,7 +57,9 @@ Available options:
   "enableNormalPhrases": true,
   "enableHumorPhrases": true,
   "enableNightPhrases": true,
-  "enableHitPhrases": true
+  "enableRainPhrases": true,
+  "enableHitPhrases": true,
+  "enableDeathPhrases": true
 }
 ```
 
