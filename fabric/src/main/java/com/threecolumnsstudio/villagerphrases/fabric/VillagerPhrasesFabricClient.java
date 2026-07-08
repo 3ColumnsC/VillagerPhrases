@@ -53,7 +53,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             String key = VillagerPhrasesData.nextInteractKey(profession, config);
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, player);
-                player.sendSystemMessage(msg);
+                player.displayClientMessage(msg, false);
             }
             return InteractionResult.PASS;
         });
@@ -76,7 +76,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             String key = VillagerPhrasesData.nextHitKey(profession, config);
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, player);
-                player.sendSystemMessage(msg);
+                player.displayClientMessage(msg, false);
             }
             return InteractionResult.PASS;
         });
@@ -118,7 +118,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
 
                 if (key != null) {
                     net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, client.player);
-                    client.player.sendSystemMessage(msg);
+                    client.player.displayClientMessage(msg, false);
                 }
             }
         });

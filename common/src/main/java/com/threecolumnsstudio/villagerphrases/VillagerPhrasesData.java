@@ -132,7 +132,7 @@ public class VillagerPhrasesData {
                 String key = pick(profession, "death");
                 if (key != null) {
                     Component msg = formatMessage(villager, key, player);
-                    player.sendSystemMessage(msg);
+                    player.displayClientMessage(msg, false);
                 }
                 it.remove();
             }

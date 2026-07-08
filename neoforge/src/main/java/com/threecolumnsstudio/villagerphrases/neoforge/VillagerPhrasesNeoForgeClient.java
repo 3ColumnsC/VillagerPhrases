@@ -31,7 +31,7 @@ public class VillagerPhrasesNeoForgeClient {
         String key = VillagerPhrasesData.nextInteractKey(profession, config);
         if (key != null) {
             net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, Minecraft.getInstance().player);
-            Minecraft.getInstance().player.sendSystemMessage(msg);
+            Minecraft.getInstance().player.displayClientMessage(msg, false);
         }
     }
 
@@ -53,7 +53,7 @@ public class VillagerPhrasesNeoForgeClient {
         String key = VillagerPhrasesData.nextHitKey(profession, config);
         if (key != null) {
             net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, event.getEntity());
-            event.getEntity().sendSystemMessage(msg);
+            event.getEntity().displayClientMessage(msg, false);
         }
     }
 
@@ -96,7 +96,7 @@ public class VillagerPhrasesNeoForgeClient {
 
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, mc.player);
-                mc.player.sendSystemMessage(msg);
+                mc.player.displayClientMessage(msg, false);
             }
         }
     }
