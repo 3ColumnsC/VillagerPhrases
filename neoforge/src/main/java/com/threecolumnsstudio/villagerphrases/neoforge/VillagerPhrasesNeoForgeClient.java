@@ -3,8 +3,10 @@ package com.threecolumnsstudio.villagerphrases.neoforge;
 import com.threecolumnsstudio.villagerphrases.VillagerPhrasesConfig;
 import com.threecolumnsstudio.villagerphrases.VillagerPhrasesData;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.Villager;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -26,12 +28,12 @@ public class VillagerPhrasesNeoForgeClient {
         VillagerPhrasesConfig config = VillagerPhrasesConfig.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
 
-        String profession = villager.getVillagerData().profession()
-            .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+        ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+        String profession = profKey != null ? profKey.getPath() : "generic";
         String key = VillagerPhrasesData.nextInteractKey(profession, config);
         if (key != null) {
             net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, Minecraft.getInstance().player);
-            Minecraft.getInstance().player.sendSystemMessage(msg);
+            Minecraft.getInstance().player.displayClientMessage(msg, false);
         }
     }
 
@@ -48,12 +50,12 @@ public class VillagerPhrasesNeoForgeClient {
         if (!config.enableHitPhrases) return;
         if (event.getEntity().getRandom().nextFloat() >= 0.7f) return;
 
-        String profession = villager.getVillagerData().profession()
-            .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+        ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+        String profession = profKey != null ? profKey.getPath() : "generic";
         String key = VillagerPhrasesData.nextHitKey(profession, config);
         if (key != null) {
             net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, event.getEntity());
-            event.getEntity().sendSystemMessage(msg);
+            event.getEntity().displayClientMessage(msg, false);
         }
     }
 
@@ -76,11 +78,12 @@ public class VillagerPhrasesNeoForgeClient {
 
         if (!nearby.isEmpty() && mc.level.getRandom().nextFloat() < 0.5f) {
             Villager villager = nearby.get(mc.level.getRandom().nextInt(nearby.size()));
-            String profession = villager.getVillagerData().profession()
-                .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+            ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+            String profession = profKey != null ? profKey.getPath() : "generic";
             String key;
 
-            if (mc.level.isDarkOutside() && config.enableNightPhrases && mc.level.getRandom().nextFloat() < 0.6f) {
+            long dayTime = mc.level.getDayTime() % 24000L;
+            if (mc.level.dimensionType().hasSkyLight() && dayTime > 13000L && dayTime < 23000L && config.enableNightPhrases && mc.level.getRandom().nextFloat() < 0.6f) {
                 key = VillagerPhrasesData.nextNightKey(profession, config);
                 if (key == null) {
                     key = VillagerPhrasesData.nextProximityKey(profession, config);
@@ -96,7 +99,7 @@ public class VillagerPhrasesNeoForgeClient {
 
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, mc.player);
-                mc.player.sendSystemMessage(msg);
+                mc.player.displayClientMessage(msg, false);
             }
         }
     }

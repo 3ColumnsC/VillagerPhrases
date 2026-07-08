@@ -10,12 +10,13 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.Villager;
 
 import java.util.List;
 
@@ -29,8 +30,8 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
         ResourceManagerHelper.get(PackType.CLIENT_RESOURCES)
             .registerReloadListener(new SimpleSynchronousResourceReloadListener() {
                 @Override
-                public Identifier getFabricId() {
-                    return Identifier.fromNamespaceAndPath(VillagerPhrases.MOD_ID, "villager_phrases");
+                public ResourceLocation getFabricId() {
+                    return ResourceLocation.tryParse(VillagerPhrases.MOD_ID + ":villager_phrases");
                 }
 
                 @Override
@@ -48,12 +49,12 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             VillagerPhrasesConfig config = VillagerPhrasesConfig.getInstance();
             if (config == null || !config.isAnyEnabled()) return InteractionResult.PASS;
 
-            String profession = villager.getVillagerData().profession()
-                .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+            ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+            String profession = profKey != null ? profKey.getPath() : "generic";
             String key = VillagerPhrasesData.nextInteractKey(profession, config);
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, player);
-                player.sendSystemMessage(msg);
+                player.displayClientMessage(msg, false);
             }
             return InteractionResult.PASS;
         });
@@ -71,12 +72,12 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             if (!config.enableHitPhrases) return InteractionResult.PASS;
             if (world.getRandom().nextFloat() >= 0.7f) return InteractionResult.PASS;
 
-            String profession = villager.getVillagerData().profession()
-                .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+            ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+            String profession = profKey != null ? profKey.getPath() : "generic";
             String key = VillagerPhrasesData.nextHitKey(profession, config);
             if (key != null) {
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, player);
-                player.sendSystemMessage(msg);
+                player.displayClientMessage(msg, false);
             }
             return InteractionResult.PASS;
         });
@@ -98,11 +99,12 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
 
             if (!nearby.isEmpty() && client.level.getRandom().nextFloat() < 0.5f) {
                 Villager villager = nearby.get(client.level.getRandom().nextInt(nearby.size()));
-                String profession = villager.getVillagerData().profession()
-                    .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
+            ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+            String profession = profKey != null ? profKey.getPath() : "generic";
                 String key;
 
-                if (client.level.isDarkOutside() && config.enableNightPhrases && client.level.getRandom().nextFloat() < 0.6f) {
+                long dayTime = client.level.getDayTime() % 24000L;
+                if (client.level.dimensionType().hasSkyLight() && dayTime > 13000L && dayTime < 23000L && config.enableNightPhrases && client.level.getRandom().nextFloat() < 0.6f) {
                     key = VillagerPhrasesData.nextNightKey(profession, config);
                     if (key == null) {
                         key = VillagerPhrasesData.nextProximityKey(profession, config);
@@ -118,7 +120,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
 
                 if (key != null) {
                     net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, client.player);
-                    client.player.sendSystemMessage(msg);
+                    client.player.displayClientMessage(msg, false);
                 }
             }
         });

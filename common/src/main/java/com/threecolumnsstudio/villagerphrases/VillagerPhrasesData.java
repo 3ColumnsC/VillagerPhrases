@@ -4,11 +4,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
@@ -21,13 +22,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.UUID;
+
 
 public class VillagerPhrasesData {
 
     private static final Map<String, Map<String, List<Phrase>>> PHRASES_BY_TAG = new HashMap<>();
     private static final Map<String, Integer> PROXIMITY_COUNTERS = new HashMap<>();
-    private static final Map<UUID, Long> RECENTLY_HIT = new HashMap<>();
+    private static final Map<Integer, Long> RECENTLY_HIT = new HashMap<>();
     private static final int HUMOR_EVERY = 3;
     private static final int DEATH_TRACK_TICKS = 100;
     private static final Random RANDOM = new Random();
@@ -38,7 +39,7 @@ public class VillagerPhrasesData {
     public static void load(ResourceManager manager) {
         PHRASES_BY_TAG.clear();
 
-        Identifier id = Identifier.fromNamespaceAndPath(VillagerPhrases.MOD_ID, "dialogue/villager_phrases.json");
+        ResourceLocation id = ResourceLocation.tryParse(VillagerPhrases.MOD_ID + ":dialogue/villager_phrases.json");
 
         try {
             var resource = manager.getResource(id)
@@ -112,27 +113,27 @@ public class VillagerPhrasesData {
     }
 
     public static void markHit(Villager villager) {
-        RECENTLY_HIT.put(villager.getUUID(), villager.level().getGameTime());
+        RECENTLY_HIT.put(villager.getId(), villager.level().getGameTime());
     }
 
     public static void checkDeaths(Level level, Player player, VillagerPhrasesConfig config) {
         if (!config.enableDeathPhrases) return;
         long now = level.getGameTime();
-        Iterator<Map.Entry<UUID, Long>> it = RECENTLY_HIT.entrySet().iterator();
+        Iterator<Map.Entry<Integer, Long>> it = RECENTLY_HIT.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry<UUID, Long> entry = it.next();
+            Map.Entry<Integer, Long> entry = it.next();
             if (now - entry.getValue() > DEATH_TRACK_TICKS) {
                 it.remove();
                 continue;
             }
             net.minecraft.world.entity.Entity e = level.getEntity(entry.getKey());
             if (e instanceof Villager villager && villager.isDeadOrDying()) {
-                String profession = villager.getVillagerData().profession()
-                    .unwrapKey().map(k -> k.identifier().getPath()).orElse("generic");
+                ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+                String profession = profKey != null ? profKey.getPath() : "generic";
                 String key = pick(profession, "death");
                 if (key != null) {
                     Component msg = formatMessage(villager, key, player);
-                    player.sendSystemMessage(msg);
+                    player.displayClientMessage(msg, false);
                 }
                 it.remove();
             }
@@ -177,8 +178,8 @@ public class VillagerPhrasesData {
         if (villager.hasCustomName()) {
             prefix = villager.getCustomName();
         } else {
-            String profId = villager.getVillagerData().profession()
-                .unwrapKey().map(k -> k.identifier().getPath()).orElse("none");
+            ResourceLocation profKey = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
+            String profId = profKey != null ? profKey.getPath() : "none";
             if (!profId.equals("none")) {
                 prefix = Component.translatable("entity.minecraft.villager." + profId);
             } else {
