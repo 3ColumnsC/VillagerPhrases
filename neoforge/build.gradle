@@ -53,8 +53,6 @@ processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     doLast {
         copySpanishLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/es_es.json"))
-        copyFrenchLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/fr_fr.json"))
-        copyGermanLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/de_de.json"))
         copyPortugueseLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/pt_br.json"))
     }
 }
@@ -73,29 +71,6 @@ def copySpanishLangFiles(sourceFile) {
             into sourceFile.parentFile
             rename "es_es.json", "${variant}.json"
         }
-    }
-}
-
-def copyFrenchLangFiles(sourceFile) {
-    if (!sourceFile.exists()) return
-    def variants = [
-        "fr_ca", "fr_ch", "fr_be"
-    ]
-    variants.each { variant ->
-        copy {
-            from sourceFile
-            into sourceFile.parentFile
-            rename "fr_fr.json", "${variant}.json"
-        }
-    }
-}
-
-def copyGermanLangFiles(sourceFile) {
-    if (!sourceFile.exists()) return
-    copy {
-        from sourceFile
-        into sourceFile.parentFile
-        rename "de_de.json", "de_at.json"
     }
 }
 
