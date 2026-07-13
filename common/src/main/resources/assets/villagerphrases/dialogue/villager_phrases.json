@@ -370,6 +370,26 @@
     { "key": "villagerphrases.phrase.generic.82", "tags": ["death"] },
     { "key": "villagerphrases.phrase.generic.83", "tags": ["death"] },
     { "key": "villagerphrases.phrase.generic.84", "tags": ["death"] },
-    { "key": "villagerphrases.phrase.generic.85", "tags": ["death"] }
+    { "key": "villagerphrases.phrase.generic.85", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.86", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.87", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.88", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.89", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.90", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.91", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.92", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.93", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.94", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.95", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.96", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.97", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.98", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.99", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.100", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.101", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.102", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.103", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.104", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.generic.105", "tags": ["normal"] }
   ]
 }
