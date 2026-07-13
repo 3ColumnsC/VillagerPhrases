@@ -14,9 +14,9 @@ Adds personality to villagers with contextual chat phrases — interact, proximi
 |------------|----------|---------------------------|
 | English    | en_us    | —                         |
 | Spanish    | es_es    | es_ar, es_mx, es_cl, ...  |
-| French     | fr_fr    | fr_ca, fr_ch, fr_be       |
-| German     | de_de    | de_at                     |
 | Portuguese | pt_br    | pt_pt                     |
+
+> Additional languages (Français, Deutsch, Русский, Italiano, Polski, Nederlands) are available as a separate resource pack.
 
 ---
 
