@@ -41,6 +41,8 @@ processResources {
     doLast {
         copySpanishLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/es_es.json"))
         copyPortugueseLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/pt_br.json"))
+        copyFrenchLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/fr_fr.json"))
+        copyGermanLangFiles(file("$buildDir/resources/main/assets/villagerphrases/lang/de_de.json"))
     }
 }
 
@@ -67,6 +69,30 @@ def copyPortugueseLangFiles(sourceFile) {
         from sourceFile
         into sourceFile.parentFile
         rename "pt_br.json", "pt_pt.json"
+    }
+}
+
+def copyFrenchLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = ["fr_ca", "fr_ch", "fr_be"]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "fr_fr.json", "${variant}.json"
+        }
+    }
+}
+
+def copyGermanLangFiles(sourceFile) {
+    if (!sourceFile.exists()) return
+    def variants = ["de_at", "de_ch"]
+    variants.each { variant ->
+        copy {
+            from sourceFile
+            into sourceFile.parentFile
+            rename "de_de.json", "${variant}.json"
+        }
     }
 }
 
