@@ -2,21 +2,21 @@
 
 Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain and hit responses — fully configurable and client-side.
 
-![Fabric](https://img.shields.io/badge/Fabric-Supported-green)
-![NeoForge](https://img.shields.io/badge/NeoForge-Supported-green)
-![License](https://img.shields.io/badge/License-MIT-blue)
-
 ---
 
 ### 🌐 Multi-Language
 
-| Language   | File     | Variants                  |
-|------------|----------|---------------------------|
-| English    | en_us    | —                         |
-| Spanish    | es_es    | es_ar, es_mx, es_cl, ...  |
-| Portuguese | pt_br    | pt_pt                     |
-
-> Additional languages (Français, Deutsch, Русский, Italiano, Polski, Nederlands) are available as a separate resource pack.
+| Language   | Main     | Variants                         | 
+|------------|----------|----------------------------------| 
+| English    | `en_us`  | —                                | 
+| Español    | `es_es`  | `es_ar`, `es_mx`, `es_cl`, `...` | 
+| Portuguese | `pt_br`  | `pt_pt`                          | 
+| Français   | `fr_fr`  | `fr_ca`, `fr_ch`, `fr_be`        | 
+| Deutsch    | `de_de`  | `de_at`, `de_ch`                 | 
+| Русский    | `ru_ru`  | —                                | 
+| Italiano   | `it_it`  | —                                | 
+| Polski     | `pl_pl`  | —                                | 
+| Nederlands | `nl_nl`  | —                                | 
 
 ---
 
@@ -39,6 +39,10 @@ Villagers respond in different situations:
 | Rain        | Proximity       | enableRainPhrases       |
 | Hit         | Attack villager | enableHitPhrases        |
 | Death       | Kill villager   | enableDeathPhrases      |
+
+### 🔗 Compatibility
+
+* **VillagerNames**: fully compatible — custom names appear as the message prefix automatically
 
 ---
 
@@ -77,12 +81,6 @@ Each toggle independently controls its corresponding phrase category.
 ### NeoForge
 
 * (+26.X) Java 25 or newer
-
----
-
-## 🔗 Compatibility
-
-* **VillagerNames**: fully compatible — custom names appear as the message prefix automatically
 
 ---
 
