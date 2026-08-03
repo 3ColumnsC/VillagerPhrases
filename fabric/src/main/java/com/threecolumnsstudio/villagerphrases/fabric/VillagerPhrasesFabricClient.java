@@ -53,6 +53,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             String profession = profKey != null ? profKey.getPath() : "generic";
             String key = VillagerPhrasesData.nextInteractKey(profession, config);
             if (key != null) {
+                VillagerPhrasesData.markInteract(world);
                 net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, player);
                 player.displayClientMessage(msg, false);
             }
@@ -91,6 +92,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             VillagerPhrasesData.checkDeaths(client.level, client.player, config);
 
             if (client.level.getGameTime() % 100 != 0) return;
+            if (VillagerPhrasesData.isInteractCooldown(client.level)) return;
 
             List<Villager> nearby = client.level.getEntitiesOfClass(
                 Villager.class,

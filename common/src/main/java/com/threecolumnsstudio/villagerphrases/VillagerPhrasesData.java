@@ -31,6 +31,8 @@ public class VillagerPhrasesData {
     private static final Map<Integer, Long> RECENTLY_HIT = new HashMap<>();
     private static final int HUMOR_EVERY = 3;
     private static final int DEATH_TRACK_TICKS = 100;
+    private static final int INTERACT_COOLDOWN_TICKS = 60;
+    private static long lastInteractGameTime = Long.MIN_VALUE;
     private static final Random RANDOM = new Random();
     private static final Set<String> QUERY_TAGS = Set.of("normal", "humor", "night", "hit", "rain", "death");
 
@@ -116,6 +118,15 @@ public class VillagerPhrasesData {
         RECENTLY_HIT.put(villager.getId(), villager.level().getGameTime());
     }
 
+    public static void markInteract(Level level) {
+        lastInteractGameTime = level.getGameTime();
+    }
+
+    public static boolean isInteractCooldown(Level level) {
+        long diff = level.getGameTime() - lastInteractGameTime;
+        return diff >= 0 && diff < INTERACT_COOLDOWN_TICKS;
+    }
+
     public static void checkDeaths(Level level, Player player, VillagerPhrasesConfig config) {
         if (!config.enableDeathPhrases) return;
         long now = level.getGameTime();
@@ -186,9 +197,9 @@ public class VillagerPhrasesData {
                 prefix = Component.translatable("entity.minecraft.villager");
             }
         }
-        return Component.literal("")
+        return Component.literal("<")
             .append(prefix)
-            .append(Component.literal(": "))
+            .append(Component.literal(">: "))
             .append(Component.translatable(key, player.getName()));
     }
 }
