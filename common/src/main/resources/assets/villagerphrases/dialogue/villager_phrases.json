@@ -472,6 +472,7 @@
     { "key": "villagerphrases.phrase.generic.159", "tags": ["death"] },
     { "key": "villagerphrases.phrase.generic.160", "tags": ["death"] },
     { "key": "villagerphrases.phrase.generic.161", "tags": ["death"] },
-    { "key": "villagerphrases.phrase.generic.162", "tags": ["death"] }
+    { "key": "villagerphrases.phrase.generic.162", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.generic.163", "tags": ["humor"] }
   ]
 }
