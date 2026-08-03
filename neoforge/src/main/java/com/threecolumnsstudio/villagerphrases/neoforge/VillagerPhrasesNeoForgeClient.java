@@ -30,6 +30,7 @@ public class VillagerPhrasesNeoForgeClient {
             .unwrapKey().map(key -> key.identifier().getPath()).orElse("generic");
         String key = VillagerPhrasesData.nextInteractKey(profession, config);
         if (key != null) {
+            VillagerPhrasesData.markInteract(event.getLevel());
             net.minecraft.network.chat.Component msg = VillagerPhrasesData.formatMessage(villager, key, Minecraft.getInstance().player);
             Minecraft.getInstance().player.displayClientMessage(msg, false);
         }
@@ -68,6 +69,7 @@ public class VillagerPhrasesNeoForgeClient {
         VillagerPhrasesData.checkDeaths(mc.level, mc.player, config);
 
         if (mc.level.getGameTime() % 100 != 0) return;
+        if (VillagerPhrasesData.isInteractCooldown(mc.level)) return;
 
         List<Villager> nearby = mc.level.getEntitiesOfClass(
             Villager.class,

@@ -7,6 +7,7 @@ modId = "villagerphrases"
 version = "${file.jarVersion}"
 displayName = "VillagerPhrases"
 authors = "3C Team"
+credits = "Alwnor"
 description = '''
 Adds immersive phrases to villagers when you interact with or walk near them.
 '''
