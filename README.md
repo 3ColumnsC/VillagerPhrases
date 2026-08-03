@@ -17,6 +17,13 @@ Adds personality to villagers with contextual chat phrases — interact, proximi
 | Italiano   | `it_it`  | —                                | 
 | Polski     | `pl_pl`  | —                                | 
 | Nederlands | `nl_nl`  | —                                | 
+| Türkçe     | `tr_tr`  | —                                | 
+| Tiếng Việt | `vi_vn`  | —                                | 
+| 简体中文   | `zh_cn`  | —                                | 
+| 繁體中文   | `zh_tw`  | `zh_hk`                          | 
+| 日本語     | `ja_jp`  | —                                | 
+| 한국어     | `ko_kr`  | —                                | 
+| Українська | `uk_ua` | —                                | 
 
 ---
 
@@ -81,6 +88,12 @@ Each toggle independently controls its corresponding phrase category.
 ### NeoForge
 
 * (+26.X) Java 25 or newer
+
+---
+
+## 💬 Suggestions & Issues
+
+If you have an idea, a suggestion, or found a bug, feel free to leave a comment on the CurseForge page or open an issue on the GitHub repository.
 
 ---
 
