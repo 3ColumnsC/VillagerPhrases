@@ -1,34 +1,44 @@
 # VillagerPhrases
 
-Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain and hit responses — fully configurable and client-side.
+Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language
+
+---
+
+<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055469/1_fjstak.jpg" alt="Villager Phrases: Different Color per Profession" width="900">
+<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055469/2_mnsyb8.jpg" alt="Villager Phrases: Normal Villagers" width="900">
+<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055468/3_s6jhnd.jpg" alt="Villager Phrases: Compatibility with Villager Names" width="900">
 
 ---
 
 ### 🌐 Multi-Language
 
-| Language   | Main     | Variants                         | 
-|------------|----------|----------------------------------| 
-| English    | `en_us`  | —                                | 
-| Español    | `es_es`  | `es_ar`, `es_mx`, `es_cl`, `...` | 
-| Portuguese | `pt_br`  | `pt_pt`                          | 
-| Français   | `fr_fr`  | `fr_ca`, `fr_ch`, `fr_be`        | 
-| Deutsch    | `de_de`  | `de_at`, `de_ch`                 | 
-| Русский    | `ru_ru`  | —                                | 
-| Italiano   | `it_it`  | —                                | 
-| Polski     | `pl_pl`  | —                                | 
-| Nederlands | `nl_nl`  | —                                | 
-| Türkçe     | `tr_tr`  | —                                | 
-| Tiếng Việt | `vi_vn`  | —                                | 
-| 简体中文   | `zh_cn`  | —                                | 
-| 繁體中文   | `zh_tw`  | `zh_hk`                          | 
-| 日本語     | `ja_jp`  | —                                | 
-| 한국어     | `ko_kr`  | —                                | 
-| Українська | `uk_ua` | —                                | 
-
----
-
-<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1783320796/1_gmchmv.jpg" alt="Villager Phrases" width="900">
-<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1783320796/2_k3iltp.jpg" alt="Villager Phrases" width="900">
+| Language             | Main    | Variants                         | 
+|----------------------|---------|----------------------------------| 
+| English              | `en_us` | —                                | 
+| Español              | `es_es` | `es_ar`, `es_mx`, `es_cl`, `...` | 
+| Portuguese           | `pt_br` | `pt_pt`                          | 
+| Français             | `fr_fr` | `fr_ca`, `fr_ch`, `fr_be`        | 
+| Deutsch              | `de_de` | `de_at`, `de_ch`                 | 
+| Русский              | `ru_ru` | —                                | 
+| Italiano             | `it_it` | —                                | 
+| Polski               | `pl_pl` | —                                | 
+| Nederlands           | `nl_nl` | —                                | 
+| Türkçe               | `tr_tr` | —                                | 
+| Tiếng Việt           | `vi_vn` | —                                | 
+| 简体中文                 | `zh_cn` | —                                | 
+| 繁體中文                 | `zh_tw` | `zh_hk`                          | 
+| 日本語                  | `ja_jp` | —                                | 
+| 한국어                  | `ko_kr` | —                                | 
+| Українська           | `uk_ua` | —                                | 
+| Svenska              | `sv_se` | —                                | 
+| Čeština              | `cs_cz` | —                                | 
+| Magyar               | `hu_hu` | —                                | 
+| Suomi                | `fi_fi` | —                                | 
+| Dansk                | `da_dk` | —                                | 
+| Norsk bokmål (Norge) | `no_no` | —                                | 
+| Română               | `ro_ro` | —                                | 
+| български            | `bg_bg` | —                                | 
+| ไทย                  | `th_th` | —                                |
 
 ---
 
