@@ -1,12 +1,12 @@
 # VillagerPhrases
 
-Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language
+Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language.
 
 ---
 
-<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055469/1_fjstak.jpg" alt="Villager Phrases: Different Color per Profession" width="900">
+<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787074130/2_mff081.jpg" alt="Villager Phrases: Different Color per Profession" width="900">
 <img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055469/2_mnsyb8.jpg" alt="Villager Phrases: Normal Villagers" width="900">
-<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787055468/3_s6jhnd.jpg" alt="Villager Phrases: Compatibility with Villager Names" width="900">
+<img src="https://res.cloudinary.com/dbtdewiqk/image/upload/v1787074129/1_j0szh2.jpg" alt="Villager Phrases: Compatibility with Villager Names" width="900">
 
 ---
 
