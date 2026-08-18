@@ -1,5 +1,6 @@
 package com.threecolumnsstudio.villagerphrases;
 
+import com.threecolumnsstudio.villagerphrases.dialogue.VillagerPhrasesData;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 
