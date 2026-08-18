@@ -11,6 +11,8 @@ credits = "Alwnor"
 description = '''
 Adds immersive phrases to villagers when you interact with or walk near them.
 '''
+
+displayURL = "https://modrinth.com/mod/villager-phrases"
 logoFile = "assets/villagerphrases/icon.png"
 
 [[dependencies.villagerphrases]]
