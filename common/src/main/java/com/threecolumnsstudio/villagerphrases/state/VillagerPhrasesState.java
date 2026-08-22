@@ -14,6 +14,7 @@ public final class VillagerPhrasesState {
     private static final Map<String, Integer> PROXIMITY_COUNTERS = new HashMap<>();
     private static final Map<Integer, Long> RECENTLY_HIT = new HashMap<>();
     private static long lastInteractGameTime = Long.MIN_VALUE;
+    private static long lastAnyMessageGameTime = Long.MIN_VALUE;
 
     private VillagerPhrasesState() {}
 
@@ -52,5 +53,14 @@ public final class VillagerPhrasesState {
     public static boolean isInteractCooldown(Level level) {
         long diff = level.getGameTime() - lastInteractGameTime;
         return diff >= 0 && diff < INTERACT_COOLDOWN_TICKS;
+    }
+
+    public static void markAnyMessage(Level level) {
+        lastAnyMessageGameTime = level.getGameTime();
+    }
+
+    public static boolean isGlobalMessageCooldown(Level level, int cooldownTicks) {
+        long diff = level.getGameTime() - lastAnyMessageGameTime;
+        return diff >= 0 && diff < cooldownTicks;
     }
 }

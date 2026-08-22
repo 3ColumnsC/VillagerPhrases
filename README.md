@@ -12,33 +12,36 @@ Adds personality to villagers with contextual chat phrases — interact, proximi
 
 ### 🌐 Multi-Language
 
-| Language             | Main    | Variants                         | 
-|----------------------|---------|----------------------------------| 
-| English              | `en_us` | —                                | 
-| Español              | `es_es` | `es_ar`, `es_mx`, `es_cl`, `...` | 
-| Portuguese           | `pt_br` | `pt_pt`                          | 
-| Français             | `fr_fr` | `fr_ca`, `fr_ch`, `fr_be`        | 
-| Deutsch              | `de_de` | `de_at`, `de_ch`                 | 
-| Русский              | `ru_ru` | —                                | 
-| Italiano             | `it_it` | —                                | 
-| Polski               | `pl_pl` | —                                | 
-| Nederlands           | `nl_nl` | —                                | 
-| Türkçe               | `tr_tr` | —                                | 
-| Tiếng Việt           | `vi_vn` | —                                | 
-| 简体中文                 | `zh_cn` | —                                | 
-| 繁體中文                 | `zh_tw` | `zh_hk`                          | 
-| 日本語                  | `ja_jp` | —                                | 
-| 한국어                  | `ko_kr` | —                                | 
-| Українська           | `uk_ua` | —                                | 
-| Svenska              | `sv_se` | —                                | 
-| Čeština              | `cs_cz` | —                                | 
-| Magyar               | `hu_hu` | —                                | 
-| Suomi                | `fi_fi` | —                                | 
-| Dansk                | `da_dk` | —                                | 
-| Norsk bokmål (Norge) | `no_no` | —                                | 
-| Română               | `ro_ro` | —                                | 
-| български            | `bg_bg` | —                                | 
-| ไทย                  | `th_th` | —                                |
+| Language                     | Main    | Variants                         | 
+|------------------------------|---------|----------------------------------| 
+| English                      | `en_us` | —                                | 
+| Español                      | `es_es` | `es_ar`, `es_mx`, `es_cl`, `...` | 
+| Portuguese                   | `pt_br` | `pt_pt`                          | 
+| Français                     | `fr_fr` | `fr_ca`, `fr_ch`, `fr_be`        | 
+| Deutsch                      | `de_de` | `de_at`, `de_ch`                 | 
+| Русский                      | `ru_ru` | —                                | 
+| Italiano                     | `it_it` | —                                | 
+| हिन्दी (Hindi)               | `hi_in` | —                                |
+| Bahasa Indonesia (Indonesia) | `id_id` | —                                |
+| Bahasa Melayu (Malaysia)     | `ms_my` | —                              |
+| Polski                       | `pl_pl` | —                                | 
+| Nederlands                   | `nl_nl` | —                                | 
+| Türkçe                       | `tr_tr` | —                                | 
+| Tiếng Việt                   | `vi_vn` | —                                | 
+| 简体中文                         | `zh_cn` | —                                | 
+| 繁體中文                         | `zh_tw` | `zh_hk`                          | 
+| 日本語                          | `ja_jp` | —                                | 
+| 한국어                          | `ko_kr` | —                                | 
+| Українська                   | `uk_ua` | —                                | 
+| Svenska                      | `sv_se` | —                                | 
+| Čeština                      | `cs_cz` | —                                | 
+| Magyar                       | `hu_hu` | —                                | 
+| Suomi                        | `fi_fi` | —                                | 
+| Dansk                        | `da_dk` | —                                | 
+| Norsk bokmål (Norge)         | `no_no` | —                                | 
+| Română                       | `ro_ro` | —                                | 
+| български                    | `bg_bg` | —                                | 
+| ไทย                          | `th_th` | —                                |
 
 ---
 
@@ -80,11 +83,14 @@ Available options:
   "enableNightPhrases": true,
   "enableRainPhrases": true,
   "enableHitPhrases": true,
-  "enableDeathPhrases": true
+  "enableDeathPhrases": true,
+  "globalMessageCooldownTicks": 160
 }
 ```
 
 Each toggle independently controls its corresponding phrase category.
+
+`globalMessageCooldownTicks` sets the minimum gap between messages (20 ticks = 1 second, so 160 = 8s by default; 0 disables the cooldown). Death phrases always fire regardless of the cooldown.
 
 ---
 
