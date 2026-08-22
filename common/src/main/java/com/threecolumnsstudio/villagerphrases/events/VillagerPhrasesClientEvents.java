@@ -32,11 +32,13 @@ public final class VillagerPhrasesClientEvents {
 
         VillagerPhrasesConfig config = VillagerPhrasesConfigLoader.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
+        if (VillagerPhrasesState.isGlobalMessageCooldown(level, config.globalMessageCooldownTicks)) return;
 
         String key = PhraseSelector.nextInteractKey(VillagerPhrasesData.professionId(villager), config);
         if (key != null) {
             VillagerPhrasesState.markInteract(level);
             player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
+            VillagerPhrasesState.markAnyMessage(level);
         }
     }
 
@@ -50,11 +52,13 @@ public final class VillagerPhrasesClientEvents {
         VillagerPhrasesState.markHit(villager);
 
         if (!config.enableHitPhrases) return;
+        if (VillagerPhrasesState.isGlobalMessageCooldown(player.level(), config.globalMessageCooldownTicks)) return;
         if (player.getRandom().nextFloat() >= HIT_CHANCE) return;
 
         String key = PhraseSelector.nextHitKey(VillagerPhrasesData.professionId(villager), config);
         if (key != null) {
             player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
+            VillagerPhrasesState.markAnyMessage(player.level());
         }
     }
 
@@ -66,6 +70,7 @@ public final class VillagerPhrasesClientEvents {
 
         if (level.getGameTime() % PROXIMITY_INTERVAL_TICKS != 0) return;
         if (VillagerPhrasesState.isInteractCooldown(level)) return;
+        if (VillagerPhrasesState.isGlobalMessageCooldown(level, config.globalMessageCooldownTicks)) return;
 
         List<Villager> nearby = level.getEntitiesOfClass(
             Villager.class,
@@ -80,6 +85,7 @@ public final class VillagerPhrasesClientEvents {
 
         if (key != null) {
             player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
+            VillagerPhrasesState.markAnyMessage(level);
         }
     }
 
@@ -110,6 +116,7 @@ public final class VillagerPhrasesClientEvents {
                 String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager), config);
                 if (key != null) {
                     player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
+                    VillagerPhrasesState.markAnyMessage(level);
                 }
                 VillagerPhrasesState.removeRecentlyHit(uuid);
             }
