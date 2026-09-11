@@ -5,7 +5,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.threecolumnsstudio.villagerphrases.VillagerPhrases;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.entity.npc.Villager;
@@ -29,7 +28,7 @@ public final class VillagerPhrasesData {
     public static void load(ResourceManager manager) {
         PHRASES_BY_TAG.clear();
 
-        ResourceLocation id = ResourceLocation.tryParse(VillagerPhrases.MOD_ID + ":dialogue/villager_phrases.json");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(VillagerPhrases.MOD_ID, "dialogue/villager_phrases.json");
 
         try {
             var resource = manager.getResource(id)
@@ -96,7 +95,7 @@ public final class VillagerPhrasesData {
     }
 
     public static String professionId(Villager villager) {
-        ResourceLocation key = BuiltInRegistries.VILLAGER_PROFESSION.getKey(villager.getVillagerData().getProfession());
-        return key != null ? key.getPath() : "none";
+        return villager.getVillagerData().profession()
+            .unwrapKey().map(key -> key.location().getPath()).orElse("none");
     }
 }

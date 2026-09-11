@@ -50,7 +50,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
             .registerReloadListener(new SimpleSynchronousResourceReloadListener() {
                 @Override
                 public ResourceLocation getFabricId() {
-                    return ResourceLocation.tryParse(VillagerPhrases.MOD_ID + ":villager_phrases");
+                    return ResourceLocation.fromNamespaceAndPath(VillagerPhrases.MOD_ID, "villager_phrases");
                 }
 
                 @Override

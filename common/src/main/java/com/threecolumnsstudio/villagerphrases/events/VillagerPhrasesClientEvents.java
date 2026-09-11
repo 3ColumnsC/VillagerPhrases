@@ -13,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
+import java.util.UUID;
 
 public final class VillagerPhrasesClientEvents {
 
@@ -21,8 +22,6 @@ public final class VillagerPhrasesClientEvents {
     private static final double SITUATIONAL_CHANCE = 0.6;
     private static final double HIT_CHANCE = 0.7;
     private static final int DEATH_TRACK_TICKS = 100;
-    private static final long NIGHT_START = 13000L;
-    private static final long NIGHT_END = 23000L;
 
     private VillagerPhrasesClientEvents() {}
 
@@ -91,14 +90,12 @@ public final class VillagerPhrasesClientEvents {
     }
 
     private static String situationalKey(Level level, VillagerPhrasesConfig config, String profession) {
-        long dayTime = level.getDayTime() % 24000L;
-        if (level.dimensionType().hasSkyLight() && dayTime > NIGHT_START && dayTime < NIGHT_END
-            && config.enableNightPhrases && level.getRandom().nextFloat() < SITUATIONAL_CHANCE) {
-            String key = PhraseSelector.nextNightKey(profession, config);
-            return key != null ? key : PhraseSelector.nextProximityKey(profession, config);
-        }
         if (level.isRaining() && config.enableRainPhrases && level.getRandom().nextFloat() < SITUATIONAL_CHANCE) {
             String key = PhraseSelector.nextRainKey(profession, config);
+            return key != null ? key : PhraseSelector.nextProximityKey(profession, config);
+        }
+        if (level.isDarkOutside() && config.enableNightPhrases && level.getRandom().nextFloat() < SITUATIONAL_CHANCE) {
+            String key = PhraseSelector.nextNightKey(profession, config);
             return key != null ? key : PhraseSelector.nextProximityKey(profession, config);
         }
         return PhraseSelector.nextProximityKey(profession, config);
@@ -108,20 +105,20 @@ public final class VillagerPhrasesClientEvents {
         if (!config.enableDeathPhrases) return;
         long now = level.getGameTime();
 
-        for (int entityId : VillagerPhrasesState.recentlyHitIds()) {
-            if (now - VillagerPhrasesState.hitTick(entityId) > DEATH_TRACK_TICKS) {
-                VillagerPhrasesState.removeRecentlyHit(entityId);
+        for (UUID uuid : VillagerPhrasesState.recentlyHitUuids()) {
+            if (now - VillagerPhrasesState.hitTick(uuid) > DEATH_TRACK_TICKS) {
+                VillagerPhrasesState.removeRecentlyHit(uuid);
                 continue;
             }
 
-            Entity entity = level.getEntity(entityId);
+            Entity entity = level.getEntity(uuid);
             if (entity instanceof Villager villager && villager.isDeadOrDying()) {
                 String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager), config);
                 if (key != null) {
                     player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
                     VillagerPhrasesState.markAnyMessage(level);
                 }
-                VillagerPhrasesState.removeRecentlyHit(entityId);
+                VillagerPhrasesState.removeRecentlyHit(uuid);
             }
         }
     }
