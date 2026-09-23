@@ -1,6 +1,6 @@
 package com.threecolumnsstudio.villagerphrases.state;
 
-import net.minecraft.world.entity.npc.villager.Villager;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
 
 import java.util.HashMap;
@@ -16,6 +16,7 @@ public final class VillagerPhrasesState {
     private static final Map<UUID, Long> RECENTLY_HIT = new HashMap<>();
     private static long lastInteractGameTime = Long.MIN_VALUE;
     private static long lastAnyMessageGameTime = Long.MIN_VALUE;
+    private static long lastIronGolemMessageGameTime = Long.MIN_VALUE;
 
     private VillagerPhrasesState() {}
 
@@ -31,8 +32,8 @@ public final class VillagerPhrasesState {
         PROXIMITY_COUNTERS.put(profession, 0);
     }
 
-    public static void markHit(Villager villager) {
-        RECENTLY_HIT.put(villager.getUUID(), villager.level().getGameTime());
+    public static void markHit(Entity entity) {
+        RECENTLY_HIT.put(entity.getUUID(), entity.level().getGameTime());
     }
 
     public static Set<UUID> recentlyHitUuids() {
@@ -62,6 +63,15 @@ public final class VillagerPhrasesState {
 
     public static boolean isGlobalMessageCooldown(Level level, int cooldownTicks) {
         long diff = level.getGameTime() - lastAnyMessageGameTime;
+        return diff >= 0 && diff < cooldownTicks;
+    }
+
+    public static void markIronGolemMessage(Level level) {
+        lastIronGolemMessageGameTime = level.getGameTime();
+    }
+
+    public static boolean isIronGolemMessageCooldown(Level level, int cooldownTicks) {
+        long diff = level.getGameTime() - lastIronGolemMessageGameTime;
         return diff >= 0 && diff < cooldownTicks;
     }
 }
