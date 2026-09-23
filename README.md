@@ -1,6 +1,6 @@
 # VillagerPhrases
 
-Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language.
+Adds personality to villagers and Iron Golems with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language.
 
 ---
 
