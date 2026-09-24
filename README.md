@@ -1,6 +1,6 @@
 # VillagerPhrases
 
-Adds personality to villagers with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language.
+Adds personality to villagers and Iron Golems with contextual chat phrases — interact, proximity, nighttime, rain, hit & death responses. Multi-Language.
 
 ---
 
@@ -67,6 +67,14 @@ Villagers respond in different situations:
 | Hit         | Attack villager | enableHitPhrases        |
 | Death       | Kill villager   | enableDeathPhrases      |
 
+Iron Golems guarding a village also have their own phrases:
+
+| Situation   | Trigger           | Toggle                  |
+|-------------|-------------------|-------------------------|
+| Proximity   | Stand near        | enableIronGolemPhrases  |
+| Hit         | Attack Iron Golem | enableIronGolemPhrases  |
+| Death       | Kill Iron Golem   | enableIronGolemPhrases  |
+
 ### 🔗 Compatibility
 
 * **VillagerNames**: fully compatible — custom names appear as the message prefix automatically
@@ -98,6 +106,17 @@ Available options:
 Each toggle independently controls its corresponding phrase category.
 
 `globalMessageCooldownTicks` sets the minimum gap between messages (20 ticks = 1 second, so 160 = 8s by default; 0 disables the cooldown). Death phrases always fire regardless of the cooldown.
+
+Iron Golem phrases have their own switch and cooldown:
+
+```json
+{
+  "enableIronGolemPhrases": true,
+  "ironGolemMessageCooldownTicks": 160
+}
+```
+
+`ironGolemMessageCooldownTicks` is independent from the villager cooldown, and Iron Golem death phrases always fire regardless of it.
 
 ---
 

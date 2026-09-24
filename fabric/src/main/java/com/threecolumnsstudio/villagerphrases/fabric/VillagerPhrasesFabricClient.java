@@ -2,6 +2,7 @@ package com.threecolumnsstudio.villagerphrases.fabric;
 
 import com.threecolumnsstudio.villagerphrases.VillagerPhrases;
 import com.threecolumnsstudio.villagerphrases.config.VillagerPhrasesConfigLoader;
+import com.threecolumnsstudio.villagerphrases.dialogue.IronGolemPhrasesData;
 import com.threecolumnsstudio.villagerphrases.dialogue.VillagerPhrasesData;
 import com.threecolumnsstudio.villagerphrases.events.VillagerPhrasesClientEvents;
 import net.fabricmc.api.ClientModInitializer;
@@ -56,6 +57,7 @@ public class VillagerPhrasesFabricClient implements ClientModInitializer {
                 @Override
                 public void onResourceManagerReload(ResourceManager manager) {
                     VillagerPhrasesData.load(manager);
+                    IronGolemPhrasesData.load(manager);
                 }
             });
     }

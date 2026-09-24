@@ -11,6 +11,9 @@ public final class ProfessionColors {
 
     public static final int NO_COLOR = -1;
 
+    /** Iron Golems are not villagers, but they share the same speech plumbing. */
+    public static final int IRON_GOLEM = 0xFFE0E0E0;
+
     private static final Map<String, Integer> COLORS = Map.ofEntries(
         Map.entry("farmer",        0xFFC89B5A),
         Map.entry("fisherman",     0xFF5CA6CC),

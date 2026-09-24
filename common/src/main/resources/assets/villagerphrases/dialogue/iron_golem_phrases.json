@@ -1,0 +1,24 @@
+{
+  "iron_golem": [
+    { "key": "villagerphrases.phrase.iron_golem.1", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.2", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.3", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.4", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.5", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.6", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.7", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.8", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.9", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.10", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.11", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.12", "tags": ["normal"] },
+    { "key": "villagerphrases.phrase.iron_golem.13", "tags": ["hit"] },
+    { "key": "villagerphrases.phrase.iron_golem.14", "tags": ["hit"] },
+    { "key": "villagerphrases.phrase.iron_golem.15", "tags": ["hit"] },
+    { "key": "villagerphrases.phrase.iron_golem.16", "tags": ["hit"] },
+    { "key": "villagerphrases.phrase.iron_golem.17", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.iron_golem.18", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.iron_golem.19", "tags": ["death"] },
+    { "key": "villagerphrases.phrase.iron_golem.20", "tags": ["death"] }
+  ]
+}
