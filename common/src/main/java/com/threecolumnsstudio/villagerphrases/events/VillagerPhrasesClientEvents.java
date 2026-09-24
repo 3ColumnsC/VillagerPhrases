@@ -8,6 +8,7 @@ import com.threecolumnsstudio.villagerphrases.dialogue.VillagerPhrasesData;
 import com.threecolumnsstudio.villagerphrases.state.VillagerPhrasesState;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -17,10 +18,13 @@ import java.util.List;
 public final class VillagerPhrasesClientEvents {
 
     private static final int PROXIMITY_INTERVAL_TICKS = 100;
+    private static final double PROXIMITY_RADIUS = 6;
     private static final double PROXIMITY_CHANCE = 0.5;
     private static final double SITUATIONAL_CHANCE = 0.6;
     private static final double HIT_CHANCE = 0.7;
     private static final int DEATH_TRACK_TICKS = 100;
+    private static final double IRON_GOLEM_PROXIMITY_CHANCE = 0.4;
+    private static final double IRON_GOLEM_HIT_CHANCE = 0.7;
     private static final long NIGHT_START = 13000L;
     private static final long NIGHT_END = 23000L;
 
@@ -45,11 +49,18 @@ public final class VillagerPhrasesClientEvents {
 
     public static void onAttack(Player player, Entity target) {
         if (!player.level().isClientSide()) return;
-        if (!(target instanceof Villager villager)) return;
 
         VillagerPhrasesConfig config = VillagerPhrasesConfigLoader.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
 
+        if (target instanceof Villager villager) {
+            handleVillagerHit(player, villager, config);
+        } else if (target instanceof IronGolem golem) {
+            handleIronGolemHit(player, golem, config);
+        }
+    }
+
+    private static void handleVillagerHit(Player player, Villager villager, VillagerPhrasesConfig config) {
         VillagerPhrasesState.markHit(villager);
 
         if (!config.enableHitPhrases) return;
@@ -63,6 +74,20 @@ public final class VillagerPhrasesClientEvents {
         }
     }
 
+    private static void handleIronGolemHit(Player player, IronGolem golem, VillagerPhrasesConfig config) {
+        VillagerPhrasesState.markHit(golem);
+
+        if (!config.enableIronGolemPhrases) return;
+        if (VillagerPhrasesState.isIronGolemMessageCooldown(player.level(), config.ironGolemMessageCooldownTicks)) return;
+        if (player.getRandom().nextFloat() >= IRON_GOLEM_HIT_CHANCE) return;
+
+        String key = PhraseSelector.nextIronGolemHitKey();
+        if (key != null) {
+            player.displayClientMessage(PhraseMessageFormatter.formatMessage(golem, key, player), false);
+            VillagerPhrasesState.markIronGolemMessage(player.level());
+        }
+    }
+
     public static void onClientTick(Level level, Player player) {
         VillagerPhrasesConfig config = VillagerPhrasesConfigLoader.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
@@ -70,12 +95,19 @@ public final class VillagerPhrasesClientEvents {
         checkDeaths(level, player, config);
 
         if (level.getGameTime() % PROXIMITY_INTERVAL_TICKS != 0) return;
+
+        if (checkIronGolemProximity(level, player, config)) return;
+
+        checkVillagerProximity(level, player, config);
+    }
+
+    private static void checkVillagerProximity(Level level, Player player, VillagerPhrasesConfig config) {
         if (VillagerPhrasesState.isInteractCooldown(level)) return;
         if (VillagerPhrasesState.isGlobalMessageCooldown(level, config.globalMessageCooldownTicks)) return;
 
         List<Villager> nearby = level.getEntitiesOfClass(
             Villager.class,
-            player.getBoundingBox().inflate(6)
+            player.getBoundingBox().inflate(PROXIMITY_RADIUS)
         );
 
         if (nearby.isEmpty() || level.getRandom().nextFloat() >= PROXIMITY_CHANCE) return;
@@ -88,6 +120,26 @@ public final class VillagerPhrasesClientEvents {
             player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
             VillagerPhrasesState.markAnyMessage(level);
         }
+    }
+
+    private static boolean checkIronGolemProximity(Level level, Player player, VillagerPhrasesConfig config) {
+        if (!config.enableIronGolemPhrases) return false;
+        if (VillagerPhrasesState.isIronGolemMessageCooldown(level, config.ironGolemMessageCooldownTicks)) return false;
+
+        List<IronGolem> nearby = level.getEntitiesOfClass(
+            IronGolem.class,
+            player.getBoundingBox().inflate(PROXIMITY_RADIUS)
+        );
+
+        if (nearby.isEmpty() || level.getRandom().nextFloat() >= IRON_GOLEM_PROXIMITY_CHANCE) return false;
+
+        IronGolem golem = nearby.get(level.getRandom().nextInt(nearby.size()));
+        String key = PhraseSelector.nextIronGolemNormalKey();
+        if (key == null) return false;
+
+        player.displayClientMessage(PhraseMessageFormatter.formatMessage(golem, key, player), false);
+        VillagerPhrasesState.markIronGolemMessage(level);
+        return true;
     }
 
     private static String situationalKey(Level level, VillagerPhrasesConfig config, String profession) {
@@ -105,7 +157,6 @@ public final class VillagerPhrasesClientEvents {
     }
 
     private static void checkDeaths(Level level, Player player, VillagerPhrasesConfig config) {
-        if (!config.enableDeathPhrases) return;
         long now = level.getGameTime();
 
         for (int entityId : VillagerPhrasesState.recentlyHitIds()) {
@@ -116,13 +167,32 @@ public final class VillagerPhrasesClientEvents {
 
             Entity entity = level.getEntity(entityId);
             if (entity instanceof Villager villager && villager.isDeadOrDying()) {
-                String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager), config);
-                if (key != null) {
-                    player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
-                    VillagerPhrasesState.markAnyMessage(level);
-                }
+                announceVillagerDeath(player, level, config, villager);
+                VillagerPhrasesState.removeRecentlyHit(entityId);
+            } else if (entity instanceof IronGolem golem && golem.isDeadOrDying()) {
+                announceIronGolemDeath(player, level, config, golem);
                 VillagerPhrasesState.removeRecentlyHit(entityId);
             }
+        }
+    }
+
+    private static void announceVillagerDeath(Player player, Level level, VillagerPhrasesConfig config, Villager villager) {
+        if (!config.enableDeathPhrases) return;
+
+        String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager), config);
+        if (key != null) {
+            player.displayClientMessage(PhraseMessageFormatter.formatMessage(villager, key, player), false);
+            VillagerPhrasesState.markAnyMessage(level);
+        }
+    }
+
+    private static void announceIronGolemDeath(Player player, Level level, VillagerPhrasesConfig config, IronGolem golem) {
+        if (!config.enableIronGolemPhrases) return;
+
+        String key = PhraseSelector.nextIronGolemDeathKey();
+        if (key != null) {
+            player.displayClientMessage(PhraseMessageFormatter.formatMessage(golem, key, player), false);
+            VillagerPhrasesState.markIronGolemMessage(level);
         }
     }
 }

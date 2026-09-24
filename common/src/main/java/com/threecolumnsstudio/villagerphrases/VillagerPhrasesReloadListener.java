@@ -1,5 +1,6 @@
 package com.threecolumnsstudio.villagerphrases;
 
+import com.threecolumnsstudio.villagerphrases.dialogue.IronGolemPhrasesData;
 import com.threecolumnsstudio.villagerphrases.dialogue.VillagerPhrasesData;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
@@ -9,6 +10,7 @@ public class VillagerPhrasesReloadListener implements ResourceManagerReloadListe
     @Override
     public void onResourceManagerReload(ResourceManager manager) {
         VillagerPhrasesData.load(manager);
+        IronGolemPhrasesData.load(manager);
         VillagerPhrases.LOGGER.info("VillagerPhrases dialog data reloaded");
     }
 }

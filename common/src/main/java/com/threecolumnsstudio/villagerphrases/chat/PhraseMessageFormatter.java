@@ -3,6 +3,8 @@ package com.threecolumnsstudio.villagerphrases.chat;
 import com.threecolumnsstudio.villagerphrases.dialogue.VillagerPhrasesData;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 
@@ -10,10 +12,10 @@ public final class PhraseMessageFormatter {
 
     private PhraseMessageFormatter() {}
 
-    public static Component formatMessage(Villager villager, String key, Player player) {
+    public static Component formatMessage(Entity speaker, String key, Player player) {
         Component phrase = Component.translatable(key, player.getName());
-        int color = ProfessionColors.colorFor(VillagerPhrasesData.professionId(villager));
-        Component name = coloredPrefix(villager);
+        int color = colorFor(speaker);
+        Component name = coloredPrefix(speaker, color);
 
         if (color == ProfessionColors.NO_COLOR) {
             return Component.literal("<")
@@ -30,23 +32,35 @@ public final class PhraseMessageFormatter {
             .append(phrase);
     }
 
-    private static Component coloredPrefix(Villager villager) {
-        Component prefix = buildPrefix(villager);
-        int color = ProfessionColors.colorFor(VillagerPhrasesData.professionId(villager));
+    private static int colorFor(Entity speaker) {
+        if (speaker instanceof Villager villager) {
+            return ProfessionColors.colorFor(VillagerPhrasesData.professionId(villager));
+        }
+        if (speaker instanceof IronGolem) {
+            return ProfessionColors.IRON_GOLEM;
+        }
+        return ProfessionColors.NO_COLOR;
+    }
+
+    private static Component coloredPrefix(Entity speaker, int color) {
+        Component prefix = buildPrefix(speaker);
         if (color == ProfessionColors.NO_COLOR) {
             return prefix;
         }
         return prefix.copy().withStyle(style -> style.withColor(color));
     }
 
-    private static Component buildPrefix(Villager villager) {
-        if (villager.hasCustomName()) {
-            return villager.getCustomName();
+    private static Component buildPrefix(Entity speaker) {
+        if (speaker.hasCustomName()) {
+            return speaker.getCustomName();
         }
-        String profId = VillagerPhrasesData.professionId(villager);
-        if (profId.equals("none")) {
-            return Component.translatable("entity.minecraft.villager");
+        if (speaker instanceof Villager villager) {
+            String profId = VillagerPhrasesData.professionId(villager);
+            if (profId.equals("none")) {
+                return Component.translatable("entity.minecraft.villager");
+            }
+            return Component.translatable("entity.minecraft.villager." + profId);
         }
-        return Component.translatable("entity.minecraft.villager." + profId);
+        return Component.translatable(speaker.getType().getDescriptionId());
     }
 }
