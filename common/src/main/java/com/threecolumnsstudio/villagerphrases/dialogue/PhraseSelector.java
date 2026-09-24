@@ -38,6 +38,18 @@ public final class PhraseSelector {
         return pick(profession, "death");
     }
 
+    public static String nextIronGolemNormalKey() {
+        return pickIronGolem("normal");
+    }
+
+    public static String nextIronGolemHitKey() {
+        return pickIronGolem("hit");
+    }
+
+    public static String nextIronGolemDeathKey() {
+        return pickIronGolem("death");
+    }
+
     private static String resolveTag(String profession, VillagerPhrasesConfig config) {
         boolean normal = config.enableNormalPhrases;
         boolean humor = config.enableHumorPhrases;
@@ -56,6 +68,12 @@ public final class PhraseSelector {
 
     private static String pick(String profession, String tag) {
         List<Phrase> pool = VillagerPhrasesData.phrasesFor(profession, tag);
+        if (pool == null || pool.isEmpty()) return null;
+        return pool.get(RANDOM.nextInt(pool.size())).key();
+    }
+
+    private static String pickIronGolem(String tag) {
+        List<Phrase> pool = IronGolemPhrasesData.phrasesFor(tag);
         if (pool == null || pool.isEmpty()) return null;
         return pool.get(RANDOM.nextInt(pool.size())).key();
     }

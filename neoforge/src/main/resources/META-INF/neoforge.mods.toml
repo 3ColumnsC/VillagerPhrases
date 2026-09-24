@@ -9,7 +9,7 @@ displayName = "VillagerPhrases"
 authors = "3C Team"
 credits = "Alwnor"
 description = '''
-Adds immersive phrases to villagers when you interact with or walk near them.
+Adds immersive phrases to villagers and iron golems when you interact with or walk near them.
 '''
 logoFile = "assets/villagerphrases/icon.png"
 
