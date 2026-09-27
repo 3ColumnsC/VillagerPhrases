@@ -3,6 +3,13 @@ plugins {
     id 'maven-publish'
 }
 
+repositories {
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/releases/'
+    }
+}
+
 base {
     archivesName = "villagerphrases-fabric"
 }
@@ -28,6 +35,7 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     implementation project(':common')
+    implementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
