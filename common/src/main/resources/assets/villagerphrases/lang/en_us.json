@@ -634,5 +634,18 @@
   "villagerphrases.phrase.iron_golem.17": "At least I fell defending the village.",
   "villagerphrases.phrase.iron_golem.18": "Iron... iron never changes.",
   "villagerphrases.phrase.iron_golem.19": "In the end, we only regret what we didn't do.",
-  "villagerphrases.phrase.iron_golem.20": "The villagers are safe... that's what matters."
+  "villagerphrases.phrase.iron_golem.20": "The villagers are safe... that's what matters.",
+  "villagerphrases.config.title": "Villager Phrases",
+  "villagerphrases.config.tab.general": "General",
+  "villagerphrases.config.normal": "Villager Interact & Proximity Phrases",
+  "villagerphrases.config.humor": "Villager Humor Phrases",
+  "villagerphrases.config.night": "Villager Night Phrases",
+  "villagerphrases.config.rain": "Villager Rain Phrases",
+  "villagerphrases.config.hit": "Villager Hit Phrases",
+  "villagerphrases.config.death": "Villager Death Phrases",
+  "villagerphrases.config.iron_golem": "Iron Golem Phrases",
+  "villagerphrases.config.global_cooldown": "Villager Message Cooldown",
+  "villagerphrases.config.iron_golem_cooldown": "Iron Golem Message Cooldown",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Apply"
 }
