@@ -3,7 +3,7 @@
 	"id": "villagerphrases",
 	"version": "${version}",
 	"name": "VillagerPhrases",
-	"description": "Adds immersive phrases to villagers when you interact with or walk near them.",
+	"description": "Adds immersive phrases to villagers and iron golems when you interact with or walk near them.",
 	"authors": [
 		"3C Team"
 	],
@@ -21,6 +21,9 @@
 	"entrypoints": {
 		"client": [
 			"com.threecolumnsstudio.villagerphrases.fabric.VillagerPhrasesFabricClient"
+		],
+		"modmenu": [
+			"com.threecolumnsstudio.villagerphrases.fabric.screen.VillagerPhrasesModMenu"
 		]
 	},
 	"depends": {
@@ -28,5 +31,8 @@
 		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
 	}
 }
