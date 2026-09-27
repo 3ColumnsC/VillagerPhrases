@@ -83,7 +83,9 @@ Iron Golems guarding a village also have their own phrases:
 
 ## ⚙️ Configuration
 
-After launching the game once, a configuration file will be generated:
+The easiest way to configure VillagerPhrases is in-game: open **Mod Menu** (Fabric) or the **Config** button in the mods list (NeoForge) to toggle phrase categories and adjust cooldowns without touching any files.
+
+If you prefer editing manually, or don't have Mod Menu installed:
 
 ```text
 config/villagerphrases.json
