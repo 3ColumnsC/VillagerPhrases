@@ -77,7 +77,7 @@ public final class VillagerPhrasesClientEvents {
     private static void handleIronGolemHit(Player player, IronGolem golem, VillagerPhrasesConfig config) {
         VillagerPhrasesState.markHit(golem);
 
-        if (!config.enableIronGolemPhrases) return;
+        if (!config.enableIronGolemHitPhrases) return;
         if (VillagerPhrasesState.isIronGolemMessageCooldown(player.level(), config.ironGolemMessageCooldownTicks)) return;
         if (player.getRandom().nextFloat() >= IRON_GOLEM_HIT_CHANCE) return;
 
@@ -123,7 +123,7 @@ public final class VillagerPhrasesClientEvents {
     }
 
     private static boolean checkIronGolemProximity(Level level, Player player, VillagerPhrasesConfig config) {
-        if (!config.enableIronGolemPhrases) return false;
+        if (!config.enableIronGolemProximityPhrases) return false;
         if (VillagerPhrasesState.isIronGolemMessageCooldown(level, config.ironGolemMessageCooldownTicks)) return false;
 
         List<IronGolem> nearby = level.getEntitiesOfClass(
@@ -187,7 +187,7 @@ public final class VillagerPhrasesClientEvents {
     }
 
     private static void announceIronGolemDeath(Player player, Level level, VillagerPhrasesConfig config, IronGolem golem) {
-        if (!config.enableIronGolemPhrases) return;
+        if (!config.enableIronGolemDeathPhrases) return;
 
         String key = PhraseSelector.nextIronGolemDeathKey();
         if (key != null) {

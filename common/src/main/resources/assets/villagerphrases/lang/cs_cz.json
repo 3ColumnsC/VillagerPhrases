@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Aspoň jsem padl při obraně vesnice.",
   "villagerphrases.phrase.iron_golem.18": "Železo... železo se nikdy nemění.",
   "villagerphrases.phrase.iron_golem.19": "Nakonec litujeme jen toho, co jsme neudělali.",
-  "villagerphrases.phrase.iron_golem.20": "Vesničané jsou v bezpečí... to je to, na čem záleží."
+  "villagerphrases.phrase.iron_golem.20": "Vesničané jsou v bezpečí... to je to, na čem záleží.",
+  "villagerphrases.config.title": "Fráze vesničanů",
+  "villagerphrases.config.tab.general": "Obecné",
+  "villagerphrases.config.normal": "Fráze při interakci a blízkosti vesničana",
+  "villagerphrases.config.humor": "Vtipné fráze vesničanů",
+  "villagerphrases.config.night": "Noční fráze vesničanů",
+  "villagerphrases.config.rain": "Fráze vesničanů při dešti",
+  "villagerphrases.config.hit": "Fráze při zásahu vesničana",
+  "villagerphrases.config.death": "Fráze při smrti vesničana",
+  "villagerphrases.config.iron_golem_proximity": "Fráze při blízkosti železného golema",
+  "villagerphrases.config.iron_golem_hit": "Fráze při zásahu železného golema",
+  "villagerphrases.config.iron_golem_death": "Fráze při smrti železného golema",
+  "villagerphrases.config.global_cooldown": "Prodleva zpráv vesničanů",
+  "villagerphrases.config.iron_golem_cooldown": "Prodleva zpráv železného golema",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Použít"
 }

@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Принаймні я впав, захищаючи село.",
   "villagerphrases.phrase.iron_golem.18": "Залізо... залізо не змінюється ніколи.",
   "villagerphrases.phrase.iron_golem.19": "Зрештою ми шкодуємо лише про те, чого не зробили.",
-  "villagerphrases.phrase.iron_golem.20": "Мешканці в безпеці... це головне."
+  "villagerphrases.phrase.iron_golem.20": "Мешканці в безпеці... це головне.",
+  "villagerphrases.config.title": "Фрази селян",
+  "villagerphrases.config.tab.general": "Загальні",
+  "villagerphrases.config.normal": "Фрази при взаємодії та близькості",
+  "villagerphrases.config.humor": "Гумористичні фрази селян",
+  "villagerphrases.config.night": "Нічні фрази селян",
+  "villagerphrases.config.rain": "Фрази селян під дощем",
+  "villagerphrases.config.hit": "Фрази при ударі по селянину",
+  "villagerphrases.config.death": "Фрази при смерті селянина",
+  "villagerphrases.config.iron_golem_proximity": "Фрази при близькості залізного голема",
+  "villagerphrases.config.iron_golem_hit": "Фрази при ударі по залізному голему",
+  "villagerphrases.config.iron_golem_death": "Фрази при смерті залізного голема",
+  "villagerphrases.config.global_cooldown": "Затримка між повідомленнями селян",
+  "villagerphrases.config.iron_golem_cooldown": "Затримка між повідомленнями залізного голема",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Застосувати"
 }

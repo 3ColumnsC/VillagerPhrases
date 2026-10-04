@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Immerhin bin ich gefallen, als ich das Dorf verteidigt habe.",
   "villagerphrases.phrase.iron_golem.18": "Eisen... Eisen ändert sich nie.",
   "villagerphrases.phrase.iron_golem.19": "Am Ende bereuen wir nur, was wir nicht getan haben.",
-  "villagerphrases.phrase.iron_golem.20": "Die Dorfbewohner sind in Sicherheit... das ist alles, was zählt."
+  "villagerphrases.phrase.iron_golem.20": "Die Dorfbewohner sind in Sicherheit... das ist alles, was zählt.",
+  "villagerphrases.config.title": "Dorfbewohner-Sprüche",
+  "villagerphrases.config.tab.general": "Allgemein",
+  "villagerphrases.config.normal": "Interaktions- und Näherungssprüche der Dorfbewohner",
+  "villagerphrases.config.humor": "Humorsprüche der Dorfbewohner",
+  "villagerphrases.config.night": "Nachtsprüche der Dorfbewohner",
+  "villagerphrases.config.rain": "Regensprüche der Dorfbewohner",
+  "villagerphrases.config.hit": "Treffersprüche der Dorfbewohner",
+  "villagerphrases.config.death": "Todessprüche der Dorfbewohner",
+  "villagerphrases.config.iron_golem_proximity": "Näherungssprüche des Eisengolems",
+  "villagerphrases.config.iron_golem_hit": "Treffersprüche des Eisengolems",
+  "villagerphrases.config.iron_golem_death": "Todessprüche des Eisengolems",
+  "villagerphrases.config.global_cooldown": "Nachrichten-Abklingzeit der Dorfbewohner",
+  "villagerphrases.config.iron_golem_cooldown": "Nachrichten-Abklingzeit des Eisengolems",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Übernehmen"
 }

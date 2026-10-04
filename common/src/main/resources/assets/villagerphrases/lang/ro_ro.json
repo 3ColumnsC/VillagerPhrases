@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Măcar am căzut apărând satul.",
   "villagerphrases.phrase.iron_golem.18": "Fierul... fierul nu se schimbă niciodată.",
   "villagerphrases.phrase.iron_golem.19": "La final, regretăm doar ce n-am făcut.",
-  "villagerphrases.phrase.iron_golem.20": "Sătenii sunt în siguranță... asta contează."
+  "villagerphrases.phrase.iron_golem.20": "Sătenii sunt în siguranță... asta contează.",
+  "villagerphrases.config.title": "Fazele sătenilor",
+  "villagerphrases.config.tab.general": "General",
+  "villagerphrases.config.normal": "Faze la interacțiune și apropiere",
+  "villagerphrases.config.humor": "Faze amuzante ale sătenilor",
+  "villagerphrases.config.night": "Faze nocturne ale sătenilor",
+  "villagerphrases.config.rain": "Fazele sătenilor pe ploaie",
+  "villagerphrases.config.hit": "Faze când lovești un sătean",
+  "villagerphrases.config.death": "Faze la moartea unui sătean",
+  "villagerphrases.config.iron_golem_proximity": "Faze la apropierea de golemul de fier",
+  "villagerphrases.config.iron_golem_hit": "Faze când lovești golemul de fier",
+  "villagerphrases.config.iron_golem_death": "Faze la moartea golemului de fier",
+  "villagerphrases.config.global_cooldown": "Interval între mesajele sătenilor",
+  "villagerphrases.config.iron_golem_cooldown": "Interval între mesajele golemului de fier",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Aplică"
 }

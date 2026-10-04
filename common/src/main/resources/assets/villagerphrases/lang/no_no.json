@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "I det minste falt jeg mens jeg forsvarte landsbyen.",
   "villagerphrases.phrase.iron_golem.18": "Jern... jern forandrer seg aldri.",
   "villagerphrases.phrase.iron_golem.19": "Til slutt angrer vi bare på det vi ikke gjorde.",
-  "villagerphrases.phrase.iron_golem.20": "Landsbyboerne er trygge... det er det som teller."
+  "villagerphrases.phrase.iron_golem.20": "Landsbyboerne er trygge... det er det som teller.",
+  "villagerphrases.config.title": "Landsbyboer-fraser",
+  "villagerphrases.config.tab.general": "Generelt",
+  "villagerphrases.config.normal": "Fraser ved samhandling og nærhet",
+  "villagerphrases.config.humor": "Morsomme landsbyboerfraser",
+  "villagerphrases.config.night": "Nattfraser",
+  "villagerphrases.config.rain": "Regnfraser",
+  "villagerphrases.config.hit": "Fraser ved slag mot en landsbyboer",
+  "villagerphrases.config.death": "Fraser ved landsbyboerens død",
+  "villagerphrases.config.iron_golem_proximity": "Fraser ved nærhet til en jerngolem",
+  "villagerphrases.config.iron_golem_hit": "Fraser ved slag mot en jerngolem",
+  "villagerphrases.config.iron_golem_death": "Fraser ved jerngolemens død",
+  "villagerphrases.config.global_cooldown": "Ventetid mellom landsbyboermeldinger",
+  "villagerphrases.config.iron_golem_cooldown": "Ventetid mellom jerngolemmeldinger",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Bruk"
 }
