@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Поне паднах, защитавайки селото.",
   "villagerphrases.phrase.iron_golem.18": "Желязото... желязото никога не се променя.",
   "villagerphrases.phrase.iron_golem.19": "Накрая съжаляваме само за това, което не сме направили.",
-  "villagerphrases.phrase.iron_golem.20": "Селяните са в безопасност... това е важното."
+  "villagerphrases.phrase.iron_golem.20": "Селяните са в безопасност... това е важното.",
+  "villagerphrases.config.title": "Фрази на селяните",
+  "villagerphrases.config.tab.general": "Общи",
+  "villagerphrases.config.normal": "Фрази при взаимодействие и близост със селянин",
+  "villagerphrases.config.humor": "Хумористични фрази на селяните",
+  "villagerphrases.config.night": "Нощни фрази на селяните",
+  "villagerphrases.config.rain": "Фрази на селяните при дъжд",
+  "villagerphrases.config.hit": "Фрази при удар по селянин",
+  "villagerphrases.config.death": "Фрази при смърт на селянин",
+  "villagerphrases.config.iron_golem_proximity": "Фрази при близост до железен голем",
+  "villagerphrases.config.iron_golem_hit": "Фрази при удар по железен голем",
+  "villagerphrases.config.iron_golem_death": "Фрази при смърт на железен голем",
+  "villagerphrases.config.global_cooldown": "Изчакване между съобщенията на селяните",
+  "villagerphrases.config.iron_golem_cooldown": "Изчакване между съобщенията на железния голем",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Приложи"
 }

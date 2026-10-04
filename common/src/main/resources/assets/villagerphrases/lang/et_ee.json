@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Vähemalt ma langesin küla kaitstes.",
   "villagerphrases.phrase.iron_golem.18": "Raud... raud ei muutu kunagi.",
   "villagerphrases.phrase.iron_golem.19": "Lõpuks kahetseme ainult seda, mida me ei teinud.",
-  "villagerphrases.phrase.iron_golem.20": "Külaelanikud on turvaliselt... see on tähtis."
+  "villagerphrases.phrase.iron_golem.20": "Külaelanikud on turvaliselt... see on tähtis.",
+  "villagerphrases.config.title": "Külaelanike fraasid",
+  "villagerphrases.config.tab.general": "Üldine",
+  "villagerphrases.config.normal": "Suhtlemise ja läheduse fraasid",
+  "villagerphrases.config.humor": "Huumorifraasid",
+  "villagerphrases.config.night": "Ööfraasid",
+  "villagerphrases.config.rain": "Vihmafraasid",
+  "villagerphrases.config.hit": "Fraasid külaelaniku löömisel",
+  "villagerphrases.config.death": "Fraasid külaelaniku surmast",
+  "villagerphrases.config.iron_golem_proximity": "Fraasid raudgolemi lähedusel",
+  "villagerphrases.config.iron_golem_hit": "Fraasid raudgolemi löömisel",
+  "villagerphrases.config.iron_golem_death": "Fraasid raudgolemi surmast",
+  "villagerphrases.config.global_cooldown": "Külaelanike sõnumite ooteaeg",
+  "villagerphrases.config.iron_golem_cooldown": "Raudgolemi sõnumite ooteaeg",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Rakenda"
 }
