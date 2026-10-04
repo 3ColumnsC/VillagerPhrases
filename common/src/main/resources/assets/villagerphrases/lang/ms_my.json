@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Setidaknya aku jatuh membela kampung.",
   "villagerphrases.phrase.iron_golem.18": "Besi... besi tidak pernah berubah.",
   "villagerphrases.phrase.iron_golem.19": "Akhirnya, kita hanya menyesal apa yang tidak kita lakukan.",
-  "villagerphrases.phrase.iron_golem.20": "Penduduk kampung selamat... itu yang penting."
+  "villagerphrases.phrase.iron_golem.20": "Penduduk kampung selamat... itu yang penting.",
+  "villagerphrases.config.title": "Frasa Penduduk Kampung",
+  "villagerphrases.config.tab.general": "Umum",
+  "villagerphrases.config.normal": "Frasa interaksi & kedekatan penduduk kampung",
+  "villagerphrases.config.humor": "Frasa jenaka penduduk kampung",
+  "villagerphrases.config.night": "Frasa malam penduduk kampung",
+  "villagerphrases.config.rain": "Frasa hujan penduduk kampung",
+  "villagerphrases.config.hit": "Frasa apabila memukul penduduk kampung",
+  "villagerphrases.config.death": "Frasa kematian penduduk kampung",
+  "villagerphrases.config.iron_golem_proximity": "Frasa kedekatan golem besi",
+  "villagerphrases.config.iron_golem_hit": "Frasa apabila memukul golem besi",
+  "villagerphrases.config.iron_golem_death": "Frasa kematian golem besi",
+  "villagerphrases.config.global_cooldown": "Jeda mesej penduduk kampung",
+  "villagerphrases.config.iron_golem_cooldown": "Jeda mesej golem besi",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Guna"
 }

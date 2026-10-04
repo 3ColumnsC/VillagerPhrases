@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Legalább a falu védelmében estem el.",
   "villagerphrases.phrase.iron_golem.18": "A vas... a vas soha nem változik.",
   "villagerphrases.phrase.iron_golem.19": "Végül csak azt bánjuk, amit nem tettünk meg.",
-  "villagerphrases.phrase.iron_golem.20": "A falusiak biztonságban vannak... ez a fontos."
+  "villagerphrases.phrase.iron_golem.20": "A falusiak biztonságban vannak... ez a fontos.",
+  "villagerphrases.config.title": "Falusiak mondatai",
+  "villagerphrases.config.tab.general": "Általános",
+  "villagerphrases.config.normal": "Interakciós és közelségi mondatok",
+  "villagerphrases.config.humor": "Humoros mondatok",
+  "villagerphrases.config.night": "Éjszakai mondatok",
+  "villagerphrases.config.rain": "Esős mondatok",
+  "villagerphrases.config.hit": "Mondatok falusi megütésekor",
+  "villagerphrases.config.death": "Mondatok falusi halálakor",
+  "villagerphrases.config.iron_golem_proximity": "Mondatok Vasgólem közelségekor",
+  "villagerphrases.config.iron_golem_hit": "Mondatok Vasgólem megütésekor",
+  "villagerphrases.config.iron_golem_death": "Mondatok Vasgólem halálakor",
+  "villagerphrases.config.global_cooldown": "Falusiak üzenetei közti várakozás",
+  "villagerphrases.config.iron_golem_cooldown": "Vasgólem üzenetei közti várakozás",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Alkalmaz"
 }

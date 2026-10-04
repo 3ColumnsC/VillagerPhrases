@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Barem sam pao braneći selo.",
   "villagerphrases.phrase.iron_golem.18": "Željezo... željezo se nikad ne mijenja.",
   "villagerphrases.phrase.iron_golem.19": "Na kraju, žalimo samo za onim što nismo učinili.",
-  "villagerphrases.phrase.iron_golem.20": "Seljani su na sigurnom... to je ono što je važno."
+  "villagerphrases.phrase.iron_golem.20": "Seljani su na sigurnom... to je ono što je važno.",
+  "villagerphrases.config.title": "Fraze seljana",
+  "villagerphrases.config.tab.general": "Općenito",
+  "villagerphrases.config.normal": "Fraze interakcije i blizine",
+  "villagerphrases.config.humor": "Šaljive fraze seljana",
+  "villagerphrases.config.night": "Noćne fraze seljana",
+  "villagerphrases.config.rain": "Fraze seljana po kiši",
+  "villagerphrases.config.hit": "Fraze pri udarcu na seljana",
+  "villagerphrases.config.death": "Fraze pri smrti seljana",
+  "villagerphrases.config.iron_golem_proximity": "Fraze blizine željeznog golema",
+  "villagerphrases.config.iron_golem_hit": "Fraze pri udarcu na željeznog golema",
+  "villagerphrases.config.iron_golem_death": "Fraze pri smrti željeznog golema",
+  "villagerphrases.config.global_cooldown": "Razmak između poruka seljana",
+  "villagerphrases.config.iron_golem_cooldown": "Razmak između poruka željeznog golema",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Primijeni"
 }

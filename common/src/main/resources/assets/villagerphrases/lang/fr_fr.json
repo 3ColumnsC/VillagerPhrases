@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Au moins, je suis tombé en défendant le village.",
   "villagerphrases.phrase.iron_golem.18": "Le fer... le fer ne change jamais.",
   "villagerphrases.phrase.iron_golem.19": "Au final, on ne regrette que ce qu'on n'a pas fait.",
-  "villagerphrases.phrase.iron_golem.20": "Les villageois sont en sécurité... c'est tout ce qui compte."
+  "villagerphrases.phrase.iron_golem.20": "Les villageois sont en sécurité... c'est tout ce qui compte.",
+  "villagerphrases.config.title": "Phrases de Villageois",
+  "villagerphrases.config.tab.general": "Général",
+  "villagerphrases.config.normal": "Phrases d'interaction et de proximité des villageois",
+  "villagerphrases.config.humor": "Phrases humoristiques des villageois",
+  "villagerphrases.config.night": "Phrases nocturnes des villageois",
+  "villagerphrases.config.rain": "Phrases de pluie des villageois",
+  "villagerphrases.config.hit": "Phrases quand on frappe un villageois",
+  "villagerphrases.config.death": "Phrases de mort des villageois",
+  "villagerphrases.config.iron_golem_proximity": "Phrases de proximité du golem de fer",
+  "villagerphrases.config.iron_golem_hit": "Phrases quand on frappe le golem de fer",
+  "villagerphrases.config.iron_golem_death": "Phrases de mort du golem de fer",
+  "villagerphrases.config.global_cooldown": "Délai des messages des villageois",
+  "villagerphrases.config.iron_golem_cooldown": "Délai des messages du golem de fer",
+  "villagerphrases.config.cooldown_value": "%s : %ss",
+  "villagerphrases.config.apply": "Appliquer"
 }

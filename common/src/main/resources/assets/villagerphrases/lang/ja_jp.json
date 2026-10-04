@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "せめて村を守って倒れた。",
   "villagerphrases.phrase.iron_golem.18": "鉄は…鉄は決して変わらない。",
   "villagerphrases.phrase.iron_golem.19": "結局、後悔するのはやらなかったことだけだ。",
-  "villagerphrases.phrase.iron_golem.20": "村人は無事だ…それが一番大事だ。"
+  "villagerphrases.phrase.iron_golem.20": "村人は無事だ…それが一番大事だ。",
+  "villagerphrases.config.title": "村人のフレーズ",
+  "villagerphrases.config.tab.general": "一般",
+  "villagerphrases.config.normal": "村人の交流・近接フレーズ",
+  "villagerphrases.config.humor": "村人のユーモアフレーズ",
+  "villagerphrases.config.night": "村人の夜のフレーズ",
+  "villagerphrases.config.rain": "村人の雨のフレーズ",
+  "villagerphrases.config.hit": "村人を攻撃したときのフレーズ",
+  "villagerphrases.config.death": "村人の死亡時のフレーズ",
+  "villagerphrases.config.iron_golem_proximity": "アイアンゴーレムの近接フレーズ",
+  "villagerphrases.config.iron_golem_hit": "アイアンゴーレムを攻撃したときのフレーズ",
+  "villagerphrases.config.iron_golem_death": "アイアンゴーレムの死亡時のフレーズ",
+  "villagerphrases.config.global_cooldown": "村人のメッセージ間隔",
+  "villagerphrases.config.iron_golem_cooldown": "アイアンゴーレムのメッセージ間隔",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "適用"
 }
