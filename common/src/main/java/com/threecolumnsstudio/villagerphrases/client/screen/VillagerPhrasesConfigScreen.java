@@ -25,12 +25,13 @@ import net.minecraft.network.chat.Component;
 
 public final class VillagerPhrasesConfigScreen extends Screen {
 
-    private static final int WIDGET_WIDTH = 220;
+    private static final int WIDGET_WIDTH = 280;
     private static final int WIDGET_HEIGHT = 20;
     private static final int ROW_SPACING = 6;
     private static final int INITIAL_SCROLL_HEIGHT = 120;
     private static final int BUTTON_WIDTH = 100;
     private static final int CONTENT_TOP_PADDING = 8;
+    private static final int CONTENT_BOTTOM_PADDING = 4;
 
     private final Screen parent;
     private final HeaderAndFooterLayout layout;
@@ -45,8 +46,10 @@ public final class VillagerPhrasesConfigScreen extends Screen {
     private boolean rain;
     private boolean hit;
     private boolean death;
-    private boolean ironGolem;
     private int globalCooldown;
+    private boolean ironGolemProximity;
+    private boolean ironGolemHit;
+    private boolean ironGolemDeath;
     private int ironGolemCooldown;
 
     public VillagerPhrasesConfigScreen(Screen parent) {
@@ -68,8 +71,10 @@ public final class VillagerPhrasesConfigScreen extends Screen {
         this.rain = config.enableRainPhrases;
         this.hit = config.enableHitPhrases;
         this.death = config.enableDeathPhrases;
-        this.ironGolem = config.enableIronGolemPhrases;
         this.globalCooldown = config.globalMessageCooldownTicks;
+        this.ironGolemProximity = config.enableIronGolemProximityPhrases;
+        this.ironGolemHit = config.enableIronGolemHitPhrases;
+        this.ironGolemDeath = config.enableIronGolemDeathPhrases;
         this.ironGolemCooldown = config.ironGolemMessageCooldownTicks;
     }
 
@@ -106,8 +111,10 @@ public final class VillagerPhrasesConfigScreen extends Screen {
         rows.addChild(toggle("villagerphrases.config.rain", this.rain, value -> this.rain = value));
         rows.addChild(toggle("villagerphrases.config.hit", this.hit, value -> this.hit = value));
         rows.addChild(toggle("villagerphrases.config.death", this.death, value -> this.death = value));
-        rows.addChild(toggle("villagerphrases.config.iron_golem", this.ironGolem, value -> this.ironGolem = value));
         rows.addChild(cooldownSlider("villagerphrases.config.global_cooldown", this.globalCooldown, value -> this.globalCooldown = value));
+        rows.addChild(toggle("villagerphrases.config.iron_golem_proximity", this.ironGolemProximity, value -> this.ironGolemProximity = value));
+        rows.addChild(toggle("villagerphrases.config.iron_golem_hit", this.ironGolemHit, value -> this.ironGolemHit = value));
+        rows.addChild(toggle("villagerphrases.config.iron_golem_death", this.ironGolemDeath, value -> this.ironGolemDeath = value));
         rows.addChild(cooldownSlider("villagerphrases.config.iron_golem_cooldown", this.ironGolemCooldown, value -> this.ironGolemCooldown = value));
 
         return grid;
@@ -133,8 +140,10 @@ public final class VillagerPhrasesConfigScreen extends Screen {
             config.enableRainPhrases = this.rain;
             config.enableHitPhrases = this.hit;
             config.enableDeathPhrases = this.death;
-            config.enableIronGolemPhrases = this.ironGolem;
             config.globalMessageCooldownTicks = this.globalCooldown;
+            config.enableIronGolemProximityPhrases = this.ironGolemProximity;
+            config.enableIronGolemHitPhrases = this.ironGolemHit;
+            config.enableIronGolemDeathPhrases = this.ironGolemDeath;
             config.ironGolemMessageCooldownTicks = this.ironGolemCooldown;
             VillagerPhrasesConfigLoader.save();
         }
@@ -203,7 +212,7 @@ public final class VillagerPhrasesConfigScreen extends Screen {
         @Override
         public void doLayout(ScreenRectangle area) {
             this.content.arrangeElements();
-            int viewportHeight = area.height() - CONTENT_TOP_PADDING;
+            int viewportHeight = area.height() - CONTENT_TOP_PADDING - CONTENT_BOTTOM_PADDING;
             this.content.setMaxHeight(viewportHeight);
             this.content.arrangeElements();
             int centeredX = area.left() + (area.width() - this.content.getWidth()) / 2;

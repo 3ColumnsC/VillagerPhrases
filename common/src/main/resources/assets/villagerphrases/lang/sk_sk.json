@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Aspoň som padol pri obrane dediny.",
   "villagerphrases.phrase.iron_golem.18": "Železo... železo sa nikdy nemení.",
   "villagerphrases.phrase.iron_golem.19": "Nakoniec ľutujeme len to, čo sme neurobili.",
-  "villagerphrases.phrase.iron_golem.20": "Dedinčania sú v bezpečí... to je to, na čom záleží."
+  "villagerphrases.phrase.iron_golem.20": "Dedinčania sú v bezpečí... to je to, na čom záleží.",
+  "villagerphrases.config.title": "Frázy dedinčanov",
+  "villagerphrases.config.tab.general": "Všeobecné",
+  "villagerphrases.config.normal": "Frázy pri interakcii a blízkosti",
+  "villagerphrases.config.humor": "Vtipné frázy dedinčanov",
+  "villagerphrases.config.night": "Nočné frázy dedinčanov",
+  "villagerphrases.config.rain": "Frázy dedinčanov v daždi",
+  "villagerphrases.config.hit": "Frázy pri zásahu dedinčana",
+  "villagerphrases.config.death": "Frázy pri smrti dedinčana",
+  "villagerphrases.config.iron_golem_proximity": "Frázy pri blízkosti železného golema",
+  "villagerphrases.config.iron_golem_hit": "Frázy pri zásahu železného golema",
+  "villagerphrases.config.iron_golem_death": "Frázy pri smrti železného golema",
+  "villagerphrases.config.global_cooldown": "Odstup medzi správami dedinčanov",
+  "villagerphrases.config.iron_golem_cooldown": "Odstup medzi správami železného golema",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Použiť"
 }

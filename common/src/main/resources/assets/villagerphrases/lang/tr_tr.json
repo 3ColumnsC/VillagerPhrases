@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "En azından köyü savunurken düştüm.",
   "villagerphrases.phrase.iron_golem.18": "Demir... demir asla değişmez.",
   "villagerphrases.phrase.iron_golem.19": "Sonunda sadece yapmadıklarımıza pişman oluruz.",
-  "villagerphrases.phrase.iron_golem.20": "Köylüler güvende... önemli olan bu."
+  "villagerphrases.phrase.iron_golem.20": "Köylüler güvende... önemli olan bu.",
+  "villagerphrases.config.title": "Köylü Sözleri",
+  "villagerphrases.config.tab.general": "Genel",
+  "villagerphrases.config.normal": "Etkileşim ve yakınlık sözleri",
+  "villagerphrases.config.humor": "Köylü mizah sözleri",
+  "villagerphrases.config.night": "Köylü gece sözleri",
+  "villagerphrases.config.rain": "Köylü yağmur sözleri",
+  "villagerphrases.config.hit": "Köylüye vurulduğunda sözler",
+  "villagerphrases.config.death": "Köylü öldüğünde sözler",
+  "villagerphrases.config.iron_golem_proximity": "Demir Golem yakınlık sözleri",
+  "villagerphrases.config.iron_golem_hit": "Demir Golem'e vurulduğunda sözler",
+  "villagerphrases.config.iron_golem_death": "Demir Golem öldüğünde sözler",
+  "villagerphrases.config.global_cooldown": "Köylü mesajları arası bekleme",
+  "villagerphrases.config.iron_golem_cooldown": "Demir Golem mesajları arası bekleme",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Uygula"
 }

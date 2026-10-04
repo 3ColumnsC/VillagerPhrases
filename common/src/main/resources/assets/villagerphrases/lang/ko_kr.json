@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "적어도 마을을 지키다 쓰러졌어.",
   "villagerphrases.phrase.iron_golem.18": "철은... 철은 절대 변하지 않아.",
   "villagerphrases.phrase.iron_golem.19": "결국 우리가 후회하는 건 하지 않은 일뿐이야.",
-  "villagerphrases.phrase.iron_golem.20": "마을 사람들은 안전해... 그게 제일 중요해."
+  "villagerphrases.phrase.iron_golem.20": "마을 사람들은 안전해... 그게 제일 중요해.",
+  "villagerphrases.config.title": "주민 대사",
+  "villagerphrases.config.tab.general": "일반",
+  "villagerphrases.config.normal": "주민 상호작용 및 근접 대사",
+  "villagerphrases.config.humor": "주민 유머 대사",
+  "villagerphrases.config.night": "주민 밤 대사",
+  "villagerphrases.config.rain": "주민 비 대사",
+  "villagerphrases.config.hit": "주민을 공격했을 때의 대사",
+  "villagerphrases.config.death": "주민 사망 시 대사",
+  "villagerphrases.config.iron_golem_proximity": "아이언 골렘 근접 대사",
+  "villagerphrases.config.iron_golem_hit": "아이언 골렘을 공격했을 때의 대사",
+  "villagerphrases.config.iron_golem_death": "아이언 골렘 사망 시 대사",
+  "villagerphrases.config.global_cooldown": "주민 메시지 간격",
+  "villagerphrases.config.iron_golem_cooldown": "아이언 골렘 메시지 간격",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "적용"
 }

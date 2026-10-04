@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Pelo menos caí defendendo a vila.",
   "villagerphrases.phrase.iron_golem.18": "Ferro... ferro nunca muda.",
   "villagerphrases.phrase.iron_golem.19": "No fim, a gente só se arrepende do que não fez.",
-  "villagerphrases.phrase.iron_golem.20": "Os aldeões estão a salvo... isso é o que importa."
+  "villagerphrases.phrase.iron_golem.20": "Os aldeões estão a salvo... isso é o que importa.",
+  "villagerphrases.config.title": "Frases dos Aldeões",
+  "villagerphrases.config.tab.general": "Geral",
+  "villagerphrases.config.normal": "Frases de interação e proximidade dos aldeões",
+  "villagerphrases.config.humor": "Frases de humor dos aldeões",
+  "villagerphrases.config.night": "Frases noturnas dos aldeões",
+  "villagerphrases.config.rain": "Frases de chuva dos aldeões",
+  "villagerphrases.config.hit": "Frases ao bater nos aldeões",
+  "villagerphrases.config.death": "Frases de morte dos aldeões",
+  "villagerphrases.config.iron_golem_proximity": "Frases de proximidade do golem de ferro",
+  "villagerphrases.config.iron_golem_hit": "Frases ao bater no golem de ferro",
+  "villagerphrases.config.iron_golem_death": "Frases de morte do golem de ferro",
+  "villagerphrases.config.global_cooldown": "Recarga das mensagens dos aldeões",
+  "villagerphrases.config.iron_golem_cooldown": "Recarga das mensagens do golem de ferro",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Aplicar"
 }

@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Åtminstone föll jag medan jag försvarade byn.",
   "villagerphrases.phrase.iron_golem.18": "Järn... järn förändras aldrig.",
   "villagerphrases.phrase.iron_golem.19": "Till slut ångrar vi bara det vi inte gjorde.",
-  "villagerphrases.phrase.iron_golem.20": "Byborna är i säkerhet... det är det som betyder något."
+  "villagerphrases.phrase.iron_golem.20": "Byborna är i säkerhet... det är det som betyder något.",
+  "villagerphrases.config.title": "Bybornas fraser",
+  "villagerphrases.config.tab.general": "Allmänt",
+  "villagerphrases.config.normal": "Fraser vid interaktion och närhet",
+  "villagerphrases.config.humor": "Roliga bybornafraser",
+  "villagerphrases.config.night": "Nattfraser",
+  "villagerphrases.config.rain": "Regnfraser",
+  "villagerphrases.config.hit": "Fraser när en bybo slås",
+  "villagerphrases.config.death": "Fraser när en bybo dör",
+  "villagerphrases.config.iron_golem_proximity": "Fraser vid närhet till järngolem",
+  "villagerphrases.config.iron_golem_hit": "Fraser när järngolemen slås",
+  "villagerphrases.config.iron_golem_death": "Fraser när järngolemen dör",
+  "villagerphrases.config.global_cooldown": "Väntetid mellan bybornas meddelanden",
+  "villagerphrases.config.iron_golem_cooldown": "Väntetid mellan järngolemens meddelanden",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Verkställ"
 }

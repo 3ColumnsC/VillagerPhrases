@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "कम से कम मैं गाँव की रक्षा करते हुए गिरा।",
   "villagerphrases.phrase.iron_golem.18": "लोहा... लोहा कभी नहीं बदलता।",
   "villagerphrases.phrase.iron_golem.19": "आख़िर में, हमें सिर्फ़ वही अफ़सोस होता है जो हमने नहीं किया।",
-  "villagerphrases.phrase.iron_golem.20": "गाँव वाले सुरक्षित हैं... यही सबसे ज़रूरी है।"
+  "villagerphrases.phrase.iron_golem.20": "गाँव वाले सुरक्षित हैं... यही सबसे ज़रूरी है।",
+  "villagerphrases.config.title": "ग्रामीण वाक्य",
+  "villagerphrases.config.tab.general": "सामान्य",
+  "villagerphrases.config.normal": "ग्रामीण बातचीत और निकटता वाक्य",
+  "villagerphrases.config.humor": "ग्रामीण मज़ेदार वाक्य",
+  "villagerphrases.config.night": "ग्रामीण रात के वाक्य",
+  "villagerphrases.config.rain": "ग्रामीण बारिश के वाक्य",
+  "villagerphrases.config.hit": "ग्रामीण को मारने पर वाक्य",
+  "villagerphrases.config.death": "ग्रामीण की मृत्यु पर वाक्य",
+  "villagerphrases.config.iron_golem_proximity": "आयरन गोलेम की निकटता पर वाक्य",
+  "villagerphrases.config.iron_golem_hit": "आयरन गोलेम को मारने पर वाक्य",
+  "villagerphrases.config.iron_golem_death": "आयरन गोलेम की मृत्यु पर वाक्य",
+  "villagerphrases.config.global_cooldown": "ग्रामीण संदेशों का अंतराल",
+  "villagerphrases.config.iron_golem_cooldown": "आयरन गोलेम संदेशों का अंतराल",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "लागू करें"
 }

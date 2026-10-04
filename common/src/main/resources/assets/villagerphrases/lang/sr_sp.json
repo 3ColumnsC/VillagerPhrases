@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Барем сам пао бранећи село.",
   "villagerphrases.phrase.iron_golem.18": "Гвожђе... гвожђе се никада не мења.",
   "villagerphrases.phrase.iron_golem.19": "На крају, жалимо само за оним што нисмо урадили.",
-  "villagerphrases.phrase.iron_golem.20": "Сељани су на сигурном... то је оно што је важно."
+  "villagerphrases.phrase.iron_golem.20": "Сељани су на сигурном... то је оно што је важно.",
+  "villagerphrases.config.title": "Фразе сељана",
+  "villagerphrases.config.tab.general": "Опште",
+  "villagerphrases.config.normal": "Фразе при интеракцији и близини",
+  "villagerphrases.config.humor": "Шаљиве фразе сељана",
+  "villagerphrases.config.night": "Ноћне фразе сељана",
+  "villagerphrases.config.rain": "Фразе сељана по киши",
+  "villagerphrases.config.hit": "Фразе при ударцу на сељана",
+  "villagerphrases.config.death": "Фразе при смрти сељана",
+  "villagerphrases.config.iron_golem_proximity": "Фразе при близини гвозденог голема",
+  "villagerphrases.config.iron_golem_hit": "Фразе при ударцу на гвозденог голема",
+  "villagerphrases.config.iron_golem_death": "Фразе при смрти гвозденог голема",
+  "villagerphrases.config.global_cooldown": "Размак између порука сељана",
+  "villagerphrases.config.iron_golem_cooldown": "Размак између порука гвозденог голема",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Примени"
 }

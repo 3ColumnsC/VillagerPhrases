@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "По крайней мере, я пал, защищая деревню.",
   "villagerphrases.phrase.iron_golem.18": "Железо... железо не меняется никогда.",
   "villagerphrases.phrase.iron_golem.19": "В конце концов мы жалеем лишь о том, чего не сделали.",
-  "villagerphrases.phrase.iron_golem.20": "Жители в безопасности... это главное."
+  "villagerphrases.phrase.iron_golem.20": "Жители в безопасности... это главное.",
+  "villagerphrases.config.title": "Фразы жителей",
+  "villagerphrases.config.tab.general": "Общие",
+  "villagerphrases.config.normal": "Фразы при взаимодействии и близости",
+  "villagerphrases.config.humor": "Юмористические фразы жителей",
+  "villagerphrases.config.night": "Ночные фразы жителей",
+  "villagerphrases.config.rain": "Фразы жителей в дождь",
+  "villagerphrases.config.hit": "Фразы при ударе по жителю",
+  "villagerphrases.config.death": "Фразы при смерти жителя",
+  "villagerphrases.config.iron_golem_proximity": "Фразы при близости железного голема",
+  "villagerphrases.config.iron_golem_hit": "Фразы при ударе по железному голему",
+  "villagerphrases.config.iron_golem_death": "Фразы при смерти железного голема",
+  "villagerphrases.config.global_cooldown": "Задержка между сообщениями жителей",
+  "villagerphrases.config.iron_golem_cooldown": "Задержка между сообщениями железного голема",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Применить"
 }

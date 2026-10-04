@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "อย่างน้อยฉันก็ล้มลงเพื่อปกป้องหมู่บ้าน",
   "villagerphrases.phrase.iron_golem.18": "เหล็ก... เหล็กไม่เคยเปลี่ยน",
   "villagerphrases.phrase.iron_golem.19": "สุดท้าย เราจะเสียใจแค่สิ่งที่เราไม่ได้ทำ",
-  "villagerphrases.phrase.iron_golem.20": "ชาวบ้านปลอดภัย... นั่นแหละที่สำคัญ"
+  "villagerphrases.phrase.iron_golem.20": "ชาวบ้านปลอดภัย... นั่นแหละที่สำคัญ",
+  "villagerphrases.config.title": "วลีของชาวบ้าน",
+  "villagerphrases.config.tab.general": "ทั่วไป",
+  "villagerphrases.config.normal": "วลีการโต้ตอบและความใกล้ชิด",
+  "villagerphrases.config.humor": "วลีตลกของชาวบ้าน",
+  "villagerphrases.config.night": "วลีกลางคืนของชาวบ้าน",
+  "villagerphrases.config.rain": "วลีฝนตกของชาวบ้าน",
+  "villagerphrases.config.hit": "วลีเมื่อตีชาวบ้าน",
+  "villagerphrases.config.death": "วลีเมื่อชาวบ้านตาย",
+  "villagerphrases.config.iron_golem_proximity": "วลีความใกล้ชิดของไอรอนโกเลม",
+  "villagerphrases.config.iron_golem_hit": "วลีเมื่อตีไอรอนโกเลม",
+  "villagerphrases.config.iron_golem_death": "วลีเมื่อไอรอนโกเลมตาย",
+  "villagerphrases.config.global_cooldown": "ระยะห่างข้อความของชาวบ้าน",
+  "villagerphrases.config.iron_golem_cooldown": "ระยะห่างข้อความของไอรอนโกเลม",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "นำไปใช้"
 }

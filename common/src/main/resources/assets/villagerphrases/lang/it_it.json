@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Almeno sono caduto difendendo il villaggio.",
   "villagerphrases.phrase.iron_golem.18": "Il ferro... il ferro non cambia mai.",
   "villagerphrases.phrase.iron_golem.19": "Alla fine ci pentiamo solo di ciò che non abbiamo fatto.",
-  "villagerphrases.phrase.iron_golem.20": "Gli abitanti del villaggio sono al sicuro... questo è ciò che conta."
+  "villagerphrases.phrase.iron_golem.20": "Gli abitanti del villaggio sono al sicuro... questo è ciò che conta.",
+  "villagerphrases.config.title": "Frasi dei Villici",
+  "villagerphrases.config.tab.general": "Generale",
+  "villagerphrases.config.normal": "Frasi di interazione e vicinanza",
+  "villagerphrases.config.humor": "Frasi divertenti dei villici",
+  "villagerphrases.config.night": "Frasi notturne dei villici",
+  "villagerphrases.config.rain": "Frasi dei villici sotto la pioggia",
+  "villagerphrases.config.hit": "Frasi quando si colpisce un villico",
+  "villagerphrases.config.death": "Frasi quando un villico muore",
+  "villagerphrases.config.iron_golem_proximity": "Frasi di vicinanza al golem di ferro",
+  "villagerphrases.config.iron_golem_hit": "Frasi quando si colpisce il golem di ferro",
+  "villagerphrases.config.iron_golem_death": "Frasi quando il golem di ferro muore",
+  "villagerphrases.config.global_cooldown": "Attesa tra i messaggi dei villici",
+  "villagerphrases.config.iron_golem_cooldown": "Attesa tra i messaggi del golem di ferro",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Applica"
 }
