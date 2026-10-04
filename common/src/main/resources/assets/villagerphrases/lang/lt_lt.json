@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Bent jau kritau gindamas kaimą.",
   "villagerphrases.phrase.iron_golem.18": "Geležis... geležis niekada nesikeičia.",
   "villagerphrases.phrase.iron_golem.19": "Galiausiai gailimės tik to, ko nepadarėme.",
-  "villagerphrases.phrase.iron_golem.20": "Gyventojai saugūs... tai svarbiausia."
+  "villagerphrases.phrase.iron_golem.20": "Gyventojai saugūs... tai svarbiausia.",
+  "villagerphrases.config.title": "Gyventojų frazės",
+  "villagerphrases.config.tab.general": "Bendra",
+  "villagerphrases.config.normal": "Sąveikos ir artumo frazės",
+  "villagerphrases.config.humor": "Humoro frazės",
+  "villagerphrases.config.night": "Naktinės frazės",
+  "villagerphrases.config.rain": "Lietaus frazės",
+  "villagerphrases.config.hit": "Frazės mušant gyventoją",
+  "villagerphrases.config.death": "Frazės gyventojui mirus",
+  "villagerphrases.config.iron_golem_proximity": "Geležinio golemo artumo frazės",
+  "villagerphrases.config.iron_golem_hit": "Frazės mušant geležinį golemą",
+  "villagerphrases.config.iron_golem_death": "Frazės geležiniam golemui mirus",
+  "villagerphrases.config.global_cooldown": "Gyventojų pranešimų intervalas",
+  "villagerphrases.config.iron_golem_cooldown": "Geležinio golemo pranešimų intervalas",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Taikyti"
 }

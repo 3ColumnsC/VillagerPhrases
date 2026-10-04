@@ -69,11 +69,11 @@ Villagers respond in different situations:
 
 Iron Golems guarding a village also have their own phrases:
 
-| Situation   | Trigger           | Toggle                  |
-|-------------|-------------------|-------------------------|
-| Proximity   | Stand near        | enableIronGolemPhrases  |
-| Hit         | Attack Iron Golem | enableIronGolemPhrases  |
-| Death       | Kill Iron Golem   | enableIronGolemPhrases  |
+| Situation   | Trigger           | Toggle                           |
+|-------------|-------------------|----------------------------------|
+| Proximity   | Stand near        | enableIronGolemProximityPhrases  |
+| Hit         | Attack Iron Golem | enableIronGolemHitPhrases        |
+| Death       | Kill Iron Golem   | enableIronGolemDeathPhrases      |
 
 ### 🔗 Compatibility
 
@@ -109,11 +109,13 @@ Each toggle independently controls its corresponding phrase category.
 
 `globalMessageCooldownTicks` sets the minimum gap between messages (20 ticks = 1 second, so 160 = 8s by default; 0 disables the cooldown). Death phrases always fire regardless of the cooldown.
 
-Iron Golem phrases have their own switch and cooldown:
+Iron Golem phrases have their own switches and cooldown:
 
 ```json
 {
-  "enableIronGolemPhrases": true,
+  "enableIronGolemProximityPhrases": true,
+  "enableIronGolemHitPhrases": true,
+  "enableIronGolemDeathPhrases": true,
   "ironGolemMessageCooldownTicks": 160
 }
 ```

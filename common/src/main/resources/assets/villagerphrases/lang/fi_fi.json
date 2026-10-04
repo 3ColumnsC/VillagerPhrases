@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Ainakin kaaduin puolustaessani kylää.",
   "villagerphrases.phrase.iron_golem.18": "Rauta... rauta ei muutu koskaan.",
   "villagerphrases.phrase.iron_golem.19": "Lopulta kadumme vain sitä, mitä emme tehneet.",
-  "villagerphrases.phrase.iron_golem.20": "Kyläläiset ovat turvassa... se on tärkeintä."
+  "villagerphrases.phrase.iron_golem.20": "Kyläläiset ovat turvassa... se on tärkeintä.",
+  "villagerphrases.config.title": "Kyläläisten lauseet",
+  "villagerphrases.config.tab.general": "Yleiset",
+  "villagerphrases.config.normal": "Vuorovaikutus- ja läheisyyslauseet",
+  "villagerphrases.config.humor": "Huumorilauseet",
+  "villagerphrases.config.night": "Yölauseet",
+  "villagerphrases.config.rain": "Sadelauseet",
+  "villagerphrases.config.hit": "Lauseet kyläläisen lyömisestä",
+  "villagerphrases.config.death": "Lauseet kyläläisen kuolemasta",
+  "villagerphrases.config.iron_golem_proximity": "Lauseet rautagolemin läheisyydestä",
+  "villagerphrases.config.iron_golem_hit": "Lauseet rautagolemin lyömisestä",
+  "villagerphrases.config.iron_golem_death": "Lauseet rautagolemin kuolemasta",
+  "villagerphrases.config.global_cooldown": "Kyläläisten viestien viive",
+  "villagerphrases.config.iron_golem_cooldown": "Rautagolemin viestien viive",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Käytä"
 }

@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Vismaz es kritu, aizstāvot ciemu.",
   "villagerphrases.phrase.iron_golem.18": "Dzelzs... dzelzs nekad nemainās.",
   "villagerphrases.phrase.iron_golem.19": "Beigās mēs nožēlojam tikai to, ko neizdarījām.",
-  "villagerphrases.phrase.iron_golem.20": "Iedzīvotāji ir drošībā... tas ir galvenais."
+  "villagerphrases.phrase.iron_golem.20": "Iedzīvotāji ir drošībā... tas ir galvenais.",
+  "villagerphrases.config.title": "Iedzīvotāju frāzes",
+  "villagerphrases.config.tab.general": "Vispārīgi",
+  "villagerphrases.config.normal": "Mijiedarbības un tuvuma frāzes",
+  "villagerphrases.config.humor": "Humora frāzes",
+  "villagerphrases.config.night": "Nakts frāzes",
+  "villagerphrases.config.rain": "Lietus frāzes",
+  "villagerphrases.config.hit": "Frāzes, sitot iedzīvotāju",
+  "villagerphrases.config.death": "Frāzes iedzīvotāja nāvē",
+  "villagerphrases.config.iron_golem_proximity": "Dzelzs golema tuvuma frāzes",
+  "villagerphrases.config.iron_golem_hit": "Frāzes, sitot dzelzs golemu",
+  "villagerphrases.config.iron_golem_death": "Frāzes dzelzs golema nāvē",
+  "villagerphrases.config.global_cooldown": "Iedzīvotāju ziņojumu intervāls",
+  "villagerphrases.config.iron_golem_cooldown": "Dzelzs golema ziņojumu intervāls",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Lietot"
 }

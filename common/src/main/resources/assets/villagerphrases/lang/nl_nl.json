@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Ik ben tenminste gevallen terwijl ik het dorp verdedigde.",
   "villagerphrases.phrase.iron_golem.18": "IJzer... ijzer verandert nooit.",
   "villagerphrases.phrase.iron_golem.19": "Uiteindelijk betreuren we alleen wat we niet hebben gedaan.",
-  "villagerphrases.phrase.iron_golem.20": "De dorpelingen zijn veilig... dat is wat telt."
+  "villagerphrases.phrase.iron_golem.20": "De dorpelingen zijn veilig... dat is wat telt.",
+  "villagerphrases.config.title": "Dorpeling-frasen",
+  "villagerphrases.config.tab.general": "Algemeen",
+  "villagerphrases.config.normal": "Interactie- en nabijheidsfrasen",
+  "villagerphrases.config.humor": "Humorfrasen van dorpelingen",
+  "villagerphrases.config.night": "Nachtfrasen van dorpelingen",
+  "villagerphrases.config.rain": "Regenfrasen van dorpelingen",
+  "villagerphrases.config.hit": "Frasen bij het slaan van een dorpeling",
+  "villagerphrases.config.death": "Frasen bij de dood van een dorpeling",
+  "villagerphrases.config.iron_golem_proximity": "Nabijheidsfrasen van de ijzergolem",
+  "villagerphrases.config.iron_golem_hit": "Frasen bij het slaan van de ijzergolem",
+  "villagerphrases.config.iron_golem_death": "Frasen bij de dood van de ijzergolem",
+  "villagerphrases.config.global_cooldown": "Wachttijd tussen dorpelingberichten",
+  "villagerphrases.config.iron_golem_cooldown": "Wachttijd tussen ijzergolemberichten",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Toepassen"
 }

@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Τουλάχιστον έπεσα υπερασπιζόμενος το χωριό.",
   "villagerphrases.phrase.iron_golem.18": "Σίδερο... το σίδερο δεν αλλάζει ποτέ.",
   "villagerphrases.phrase.iron_golem.19": "Στο τέλος μετανιώνουμε μόνο για ό,τι δεν κάναμε.",
-  "villagerphrases.phrase.iron_golem.20": "Οι χωρικοί είναι ασφαλείς... αυτό είναι το σημαντικό."
+  "villagerphrases.phrase.iron_golem.20": "Οι χωρικοί είναι ασφαλείς... αυτό είναι το σημαντικό.",
+  "villagerphrases.config.title": "Φράσεις Χωρικών",
+  "villagerphrases.config.tab.general": "Γενικά",
+  "villagerphrases.config.normal": "Φράσεις αλληλεπίδρασης και εγγύτητας",
+  "villagerphrases.config.humor": "Χιουμοριστικές φράσεις χωρικών",
+  "villagerphrases.config.night": "Νυχτερινές φράσεις χωρικών",
+  "villagerphrases.config.rain": "Φράσεις χωρικών στη βροχή",
+  "villagerphrases.config.hit": "Φράσεις όταν χτυπιέται χωρικός",
+  "villagerphrases.config.death": "Φράσεις θανάτου χωρικού",
+  "villagerphrases.config.iron_golem_proximity": "Φράσεις εγγύτητας σιδερένιου γκόλεμ",
+  "villagerphrases.config.iron_golem_hit": "Φράσεις όταν χτυπιέται σιδερένιος γκόλεμ",
+  "villagerphrases.config.iron_golem_death": "Φράσεις θανάτου σιδερένιου γκόλεμ",
+  "villagerphrases.config.global_cooldown": "Χρόνος αναμονής μηνυμάτων χωρικών",
+  "villagerphrases.config.iron_golem_cooldown": "Χρόνος αναμονής μηνυμάτων σιδερένιου γκόλεμ",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Εφαρμογή"
 }

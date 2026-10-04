@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Przynajmniej padłem, broniąc wioski.",
   "villagerphrases.phrase.iron_golem.18": "Żelazo... żelazo nigdy się nie zmienia.",
   "villagerphrases.phrase.iron_golem.19": "W końcu żałujemy tylko tego, czego nie zrobiliśmy.",
-  "villagerphrases.phrase.iron_golem.20": "Wieśniacy są bezpieczni... to się liczy."
+  "villagerphrases.phrase.iron_golem.20": "Wieśniacy są bezpieczni... to się liczy.",
+  "villagerphrases.config.title": "Frazy wieśniaków",
+  "villagerphrases.config.tab.general": "Ogólne",
+  "villagerphrases.config.normal": "Frazy interakcji i bliskości",
+  "villagerphrases.config.humor": "Humorystyczne frazy wieśniaków",
+  "villagerphrases.config.night": "Nocne frazy wieśniaków",
+  "villagerphrases.config.rain": "Frazy wieśniaków podczas deszczu",
+  "villagerphrases.config.hit": "Frazy przy uderzeniu wieśniaka",
+  "villagerphrases.config.death": "Frazy przy śmierci wieśniaka",
+  "villagerphrases.config.iron_golem_proximity": "Frazy bliskości żelaznego golema",
+  "villagerphrases.config.iron_golem_hit": "Frazy przy uderzeniu żelaznego golema",
+  "villagerphrases.config.iron_golem_death": "Frazy przy śmierci żelaznego golema",
+  "villagerphrases.config.global_cooldown": "Odstęp między wiadomościami wieśniaków",
+  "villagerphrases.config.iron_golem_cooldown": "Odstęp między wiadomościami żelaznego golema",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Zastosuj"
 }

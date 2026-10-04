@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "至少我是為守護村莊倒下的。",
   "villagerphrases.phrase.iron_golem.18": "鐵……鐵永遠不會變。",
   "villagerphrases.phrase.iron_golem.19": "到頭來，我們只會後悔沒做過的事。",
-  "villagerphrases.phrase.iron_golem.20": "村民們都安全……這才是最重要的。"
+  "villagerphrases.phrase.iron_golem.20": "村民們都安全……這才是最重要的。",
+  "villagerphrases.config.title": "村民短語",
+  "villagerphrases.config.tab.general": "一般",
+  "villagerphrases.config.normal": "村民互動與靠近短語",
+  "villagerphrases.config.humor": "村民幽默短語",
+  "villagerphrases.config.night": "村民夜間短語",
+  "villagerphrases.config.rain": "村民雨天短語",
+  "villagerphrases.config.hit": "攻擊村民時的短語",
+  "villagerphrases.config.death": "村民死亡時的短語",
+  "villagerphrases.config.iron_golem_proximity": "鐵巨人靠近短語",
+  "villagerphrases.config.iron_golem_hit": "攻擊鐵巨人時的短語",
+  "villagerphrases.config.iron_golem_death": "鐵巨人死亡時的短語",
+  "villagerphrases.config.global_cooldown": "村民訊息冷卻",
+  "villagerphrases.config.iron_golem_cooldown": "鐵巨人訊息冷卻",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "套用"
 }

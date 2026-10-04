@@ -634,5 +634,20 @@
   "villagerphrases.phrase.iron_golem.17": "Ít ra ta đã ngã xuống khi bảo vệ ngôi làng.",
   "villagerphrases.phrase.iron_golem.18": "Sắt... sắt không bao giờ thay đổi.",
   "villagerphrases.phrase.iron_golem.19": "Cuối cùng, ta chỉ hối tiếc những gì chưa làm.",
-  "villagerphrases.phrase.iron_golem.20": "Dân làng được an toàn... thế mới là điều quan trọng."
+  "villagerphrases.phrase.iron_golem.20": "Dân làng được an toàn... thế mới là điều quan trọng.",
+  "villagerphrases.config.title": "Câu nói của Dân làng",
+  "villagerphrases.config.tab.general": "Chung",
+  "villagerphrases.config.normal": "Câu nói khi tương tác và đến gần",
+  "villagerphrases.config.humor": "Câu nói hài hước của dân làng",
+  "villagerphrases.config.night": "Câu nói ban đêm của dân làng",
+  "villagerphrases.config.rain": "Câu nói khi trời mưa của dân làng",
+  "villagerphrases.config.hit": "Câu nói khi đánh dân làng",
+  "villagerphrases.config.death": "Câu nói khi dân làng chết",
+  "villagerphrases.config.iron_golem_proximity": "Câu nói khi đến gần golem sắt",
+  "villagerphrases.config.iron_golem_hit": "Câu nói khi đánh golem sắt",
+  "villagerphrases.config.iron_golem_death": "Câu nói khi golem sắt chết",
+  "villagerphrases.config.global_cooldown": "Khoảng chờ giữa các tin nhắn của dân làng",
+  "villagerphrases.config.iron_golem_cooldown": "Khoảng chờ giữa các tin nhắn của golem sắt",
+  "villagerphrases.config.cooldown_value": "%s: %ss",
+  "villagerphrases.config.apply": "Áp dụng"
 }
