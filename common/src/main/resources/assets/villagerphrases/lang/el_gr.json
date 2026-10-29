@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Χρόνος αναμονής μηνυμάτων χωρικών",
   "villagerphrases.config.iron_golem_cooldown": "Χρόνος αναμονής μηνυμάτων σιδερένιου γκόλεμ",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Εφαρμογή"
+  "villagerphrases.config.apply": "Εφαρμογή",
+  "villagerphrases.config.reset": "Επαναφορά προεπιλογών",
+  "villagerphrases.config.reset.title": "Επαναφορά όλων των ρυθμίσεων;",
+  "villagerphrases.config.reset.message": "Αυτό θα επαναφέρει όλες τις ρυθμίσεις του VillagerPhrases στις προεπιλογές.",
+  "villagerphrases.config.reset.confirm": "Επαναφορά"
 }

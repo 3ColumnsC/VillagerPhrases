@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Délai des messages des villageois",
   "villagerphrases.config.iron_golem_cooldown": "Délai des messages du golem de fer",
   "villagerphrases.config.cooldown_value": "%s : %ss",
-  "villagerphrases.config.apply": "Appliquer"
+  "villagerphrases.config.apply": "Appliquer",
+  "villagerphrases.config.reset": "Réinitialiser",
+  "villagerphrases.config.reset.title": "Réinitialiser tous les paramètres ?",
+  "villagerphrases.config.reset.message": "Cela rétablira tous les paramètres de VillagerPhrases à leurs valeurs par défaut.",
+  "villagerphrases.config.reset.confirm": "Réinitialiser"
 }

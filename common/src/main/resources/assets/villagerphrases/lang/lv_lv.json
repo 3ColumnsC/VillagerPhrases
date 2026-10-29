@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Iedzīvotāju ziņojumu intervāls",
   "villagerphrases.config.iron_golem_cooldown": "Dzelzs golema ziņojumu intervāls",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Lietot"
+  "villagerphrases.config.apply": "Lietot",
+  "villagerphrases.config.reset": "Atjaunot noklusējumu",
+  "villagerphrases.config.reset.title": "Atjaunot visus iestatījumus?",
+  "villagerphrases.config.reset.message": "Tas atjaunos visus VillagerPhrases iestatījumus noklusējuma vērtībās.",
+  "villagerphrases.config.reset.confirm": "Atjaunot"
 }

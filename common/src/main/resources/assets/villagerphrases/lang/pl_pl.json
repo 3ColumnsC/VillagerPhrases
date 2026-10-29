@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Odstęp między wiadomościami wieśniaków",
   "villagerphrases.config.iron_golem_cooldown": "Odstęp między wiadomościami żelaznego golema",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Zastosuj"
+  "villagerphrases.config.apply": "Zastosuj",
+  "villagerphrases.config.reset": "Przywróć domyślne",
+  "villagerphrases.config.reset.title": "Przywrócić wszystkie ustawienia?",
+  "villagerphrases.config.reset.message": "Spowoduje to przywrócenie wszystkich ustawień VillagerPhrases do wartości domyślnych.",
+  "villagerphrases.config.reset.confirm": "Przywróć"
 }

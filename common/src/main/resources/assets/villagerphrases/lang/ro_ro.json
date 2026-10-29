@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Interval între mesajele sătenilor",
   "villagerphrases.config.iron_golem_cooldown": "Interval între mesajele golemului de fier",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Aplică"
+  "villagerphrases.config.apply": "Aplică",
+  "villagerphrases.config.reset": "Resetează la implicit",
+  "villagerphrases.config.reset.title": "Resetezi toate setările?",
+  "villagerphrases.config.reset.message": "Aceasta va reseta toate setările VillagerPhrases la valorile implicite.",
+  "villagerphrases.config.reset.confirm": "Resetează"
 }

@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Изчакване между съобщенията на селяните",
   "villagerphrases.config.iron_golem_cooldown": "Изчакване между съобщенията на железния голем",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Приложи"
+  "villagerphrases.config.apply": "Приложи",
+  "villagerphrases.config.reset": "Възстанови по подразбиране",
+  "villagerphrases.config.reset.title": "Да се нулират ли всички настройки?",
+  "villagerphrases.config.reset.message": "Това ще възстанови всички настройки на VillagerPhrases по подразбиране.",
+  "villagerphrases.config.reset.confirm": "Нулиране"
 }

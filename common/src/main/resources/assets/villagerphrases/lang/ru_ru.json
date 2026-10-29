@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Задержка между сообщениями жителей",
   "villagerphrases.config.iron_golem_cooldown": "Задержка между сообщениями железного голема",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Применить"
+  "villagerphrases.config.apply": "Применить",
+  "villagerphrases.config.reset": "Сбросить настройки",
+  "villagerphrases.config.reset.title": "Сбросить все настройки?",
+  "villagerphrases.config.reset.message": "Все настройки VillagerPhrases будут возвращены к значениям по умолчанию.",
+  "villagerphrases.config.reset.confirm": "Сбросить"
 }
