@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Väntetid mellan bybornas meddelanden",
   "villagerphrases.config.iron_golem_cooldown": "Väntetid mellan järngolemens meddelanden",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Verkställ"
+  "villagerphrases.config.apply": "Verkställ",
+  "villagerphrases.config.reset": "Återställ till standard",
+  "villagerphrases.config.reset.title": "Återställ alla inställningar?",
+  "villagerphrases.config.reset.message": "Detta återställer alla VillagerPhrases-inställningar till standardvärdena.",
+  "villagerphrases.config.reset.confirm": "Återställ"
 }

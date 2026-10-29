@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Ventetid mellem landsbyboerbeskeder",
   "villagerphrases.config.iron_golem_cooldown": "Ventetid mellem jerngolembeskeder",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Anvend"
+  "villagerphrases.config.apply": "Anvend",
+  "villagerphrases.config.reset": "Gendan standard",
+  "villagerphrases.config.reset.title": "Nulstil alle indstillinger?",
+  "villagerphrases.config.reset.message": "Dette vil gendanne alle VillagerPhrases-indstillinger til standard.",
+  "villagerphrases.config.reset.confirm": "Nulstil"
 }

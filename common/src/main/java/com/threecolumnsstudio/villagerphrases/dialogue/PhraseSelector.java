@@ -22,19 +22,19 @@ public final class PhraseSelector {
         return nextInteractKey(profession, config);
     }
 
-    public static String nextNightKey(String profession, VillagerPhrasesConfig config) {
+    public static String nextNightKey(String profession) {
         return pick(profession, "night");
     }
 
-    public static String nextHitKey(String profession, VillagerPhrasesConfig config) {
+    public static String nextHitKey(String profession) {
         return pick(profession, "hit");
     }
 
-    public static String nextRainKey(String profession, VillagerPhrasesConfig config) {
+    public static String nextRainKey(String profession) {
         return pick(profession, "rain");
     }
 
-    public static String nextDeathKey(String profession, VillagerPhrasesConfig config) {
+    public static String nextDeathKey(String profession) {
         return pick(profession, "death");
     }
 

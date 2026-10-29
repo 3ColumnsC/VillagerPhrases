@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Razmak između poruka seljana",
   "villagerphrases.config.iron_golem_cooldown": "Razmak između poruka željeznog golema",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Primijeni"
+  "villagerphrases.config.apply": "Primijeni",
+  "villagerphrases.config.reset": "Vrati na zadano",
+  "villagerphrases.config.reset.title": "Vratiti sve postavke?",
+  "villagerphrases.config.reset.message": "Ovo će vratiti sve VillagerPhrases postavke na zadane vrijednosti.",
+  "villagerphrases.config.reset.confirm": "Vrati"
 }

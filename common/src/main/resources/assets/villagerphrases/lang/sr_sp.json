@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Размак између порука сељана",
   "villagerphrases.config.iron_golem_cooldown": "Размак између порука гвозденог голема",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Примени"
+  "villagerphrases.config.apply": "Примени",
+  "villagerphrases.config.reset": "Врати на подразумевано",
+  "villagerphrases.config.reset.title": "Вратити сва подешавања?",
+  "villagerphrases.config.reset.message": "Ово ће вратити сва подешавања за VillagerPhrases на подразумеване вредности.",
+  "villagerphrases.config.reset.confirm": "Врати"
 }

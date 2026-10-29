@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "ระยะห่างข้อความของชาวบ้าน",
   "villagerphrases.config.iron_golem_cooldown": "ระยะห่างข้อความของไอรอนโกเลม",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "นำไปใช้"
+  "villagerphrases.config.apply": "นำไปใช้",
+  "villagerphrases.config.reset": "รีเซ็ตเป็นค่าเริ่มต้น",
+  "villagerphrases.config.reset.title": "รีเซ็ตการตั้งค่าทั้งหมด?",
+  "villagerphrases.config.reset.message": "การดำเนินการนี้จะคืนค่าการตั้งค่า VillagerPhrases ทั้งหมดเป็นค่าเริ่มต้น",
+  "villagerphrases.config.reset.confirm": "รีเซ็ต"
 }

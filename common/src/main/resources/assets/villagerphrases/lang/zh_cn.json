@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "村民消息冷却",
   "villagerphrases.config.iron_golem_cooldown": "铁傀儡消息冷却",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "应用"
+  "villagerphrases.config.apply": "应用",
+  "villagerphrases.config.reset": "恢复默认",
+  "villagerphrases.config.reset.title": "重置所有设置？",
+  "villagerphrases.config.reset.message": "这会将所有 VillagerPhrases 设置恢复为默认值。",
+  "villagerphrases.config.reset.confirm": "重置"
 }

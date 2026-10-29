@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Jeda mesej penduduk kampung",
   "villagerphrases.config.iron_golem_cooldown": "Jeda mesej golem besi",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Guna"
+  "villagerphrases.config.apply": "Guna",
+  "villagerphrases.config.reset": "Tetapkan semula kepada lalai",
+  "villagerphrases.config.reset.title": "Tetapkan semula semua tetapan?",
+  "villagerphrases.config.reset.message": "Ini akan menetapkan semula semua tetapan VillagerPhrases kepada lalai.",
+  "villagerphrases.config.reset.confirm": "Tetapkan semula"
 }
