@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "ग्रामीण संदेशों का अंतराल",
   "villagerphrases.config.iron_golem_cooldown": "आयरन गोलेम संदेशों का अंतराल",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "लागू करें"
+  "villagerphrases.config.apply": "लागू करें",
+  "villagerphrases.config.reset": "डिफ़ॉल्ट पर रीसेट करें",
+  "villagerphrases.config.reset.title": "सभी सेटिंग्स रीसेट करें?",
+  "villagerphrases.config.reset.message": "यह सभी VillagerPhrases सेटिंग्स को डिफ़ॉल्ट पर रीसेट कर देगा।",
+  "villagerphrases.config.reset.confirm": "रीसेट"
 }

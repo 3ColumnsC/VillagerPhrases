@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Attesa tra i messaggi dei villici",
   "villagerphrases.config.iron_golem_cooldown": "Attesa tra i messaggi del golem di ferro",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Applica"
+  "villagerphrases.config.apply": "Applica",
+  "villagerphrases.config.reset": "Ripristina predefiniti",
+  "villagerphrases.config.reset.title": "Ripristinare tutte le impostazioni?",
+  "villagerphrases.config.reset.message": "Verranno ripristinate tutte le impostazioni di VillagerPhrases ai valori predefiniti.",
+  "villagerphrases.config.reset.confirm": "Ripristina"
 }

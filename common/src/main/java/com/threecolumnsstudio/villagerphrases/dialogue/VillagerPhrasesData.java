@@ -11,6 +11,8 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.world.entity.npc.Villager;
 
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,16 +29,15 @@ public final class VillagerPhrasesData {
     private VillagerPhrasesData() {}
 
     public static void load(ResourceManager manager) {
-        PHRASES_BY_TAG.clear();
-
         ResourceLocation id = ResourceLocation.tryParse(VillagerPhrases.MOD_ID + ":dialogue/villager_phrases.json");
 
         try {
             var resource = manager.getResource(id)
                 .orElseThrow(() -> new RuntimeException("Could not find " + id));
-            JsonObject json = JsonParser.parseReader(
-                new InputStreamReader(resource.open())
-            ).getAsJsonObject();
+            JsonObject json;
+            try (Reader reader = new InputStreamReader(resource.open(), StandardCharsets.UTF_8)) {
+                json = JsonParser.parseReader(reader).getAsJsonObject();
+            }
 
             Map<String, List<Phrase>> raw = new HashMap<>();
             for (String profession : json.keySet()) {
@@ -55,6 +56,7 @@ public final class VillagerPhrasesData {
             List<Phrase> genericPool = raw.get("generic");
             if (genericPool == null) genericPool = Collections.emptyList();
 
+            Map<String, Map<String, List<Phrase>>> loaded = new HashMap<>();
             for (String profession : raw.keySet()) {
                 List<Phrase> professionPool = raw.get(profession);
                 List<Phrase> combined = new ArrayList<>(professionPool);
@@ -62,7 +64,6 @@ public final class VillagerPhrasesData {
                     combined.addAll(genericPool);
                 }
                 Map<String, List<Phrase>> byTag = new HashMap<>();
-                byTag.put("all", combined);
                 for (String tag : QUERY_TAGS) {
                     List<Phrase> filtered = new ArrayList<>();
                     for (Phrase p : combined) {
@@ -72,12 +73,15 @@ public final class VillagerPhrasesData {
                     }
                     byTag.put(tag, filtered);
                 }
-                PHRASES_BY_TAG.put(profession, byTag);
+                loaded.put(profession, byTag);
             }
+
+            PHRASES_BY_TAG.clear();
+            PHRASES_BY_TAG.putAll(loaded);
 
             VillagerPhrases.LOGGER.info("Loaded {} professions from dialogue data", raw.size());
         } catch (Exception e) {
-            VillagerPhrases.LOGGER.error("Failed to load villager phrases", e);
+            VillagerPhrases.LOGGER.error("Failed to load villager phrases ({})", e.getClass().getSimpleName());
         }
     }
 
@@ -86,13 +90,9 @@ public final class VillagerPhrasesData {
         if (byTag == null) {
             byTag = PHRASES_BY_TAG.get("generic");
         }
-        if (byTag == null) return null;
+        if (byTag == null) return Collections.emptyList();
 
-        List<Phrase> pool = byTag.get(tag);
-        if (pool == null || pool.isEmpty()) {
-            pool = byTag.get("all");
-        }
-        return pool;
+        return byTag.getOrDefault(tag, Collections.emptyList());
     }
 
     public static String professionId(Villager villager) {

@@ -17,6 +17,7 @@ import net.minecraft.client.gui.layouts.GridLayout;
 import net.minecraft.client.gui.layouts.HeaderAndFooterLayout;
 import net.minecraft.client.gui.layouts.LinearLayout;
 import net.minecraft.client.gui.navigation.ScreenRectangle;
+import net.minecraft.client.gui.screens.ConfirmScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.worldselection.CreateWorldScreen;
 import net.minecraft.network.chat.CommonComponents;
@@ -115,6 +116,10 @@ public final class VillagerPhrasesConfigScreen extends Screen {
         rows.addChild(toggle("villagerphrases.config.iron_golem_hit", this.ironGolemHit, value -> this.ironGolemHit = value));
         rows.addChild(toggle("villagerphrases.config.iron_golem_death", this.ironGolemDeath, value -> this.ironGolemDeath = value));
         rows.addChild(cooldownSlider("villagerphrases.config.iron_golem_cooldown", this.ironGolemCooldown, value -> this.ironGolemCooldown = value));
+        rows.addChild(Button.builder(Component.translatable("villagerphrases.config.reset"),
+                button -> openResetConfirmation())
+            .width(WIDGET_WIDTH)
+            .build());
 
         return grid;
     }
@@ -128,6 +133,22 @@ public final class VillagerPhrasesConfigScreen extends Screen {
     private CooldownSlider cooldownSlider(String translationKey, int initialTicks, java.util.function.IntConsumer setter) {
         return new CooldownSlider(0, 0, WIDGET_WIDTH, WIDGET_HEIGHT,
             Component.translatable(translationKey), initialTicks, setter);
+    }
+
+    private void openResetConfirmation() {
+        this.minecraft.setScreen(new ConfirmScreen(
+            confirmed -> {
+                if (confirmed) {
+                    VillagerPhrasesConfigLoader.resetToDefaults();
+                    this.minecraft.setScreen(new VillagerPhrasesConfigScreen(this.parent));
+                } else {
+                    this.minecraft.setScreen(this);
+                }
+            },
+            Component.translatable("villagerphrases.config.reset.title"),
+            Component.translatable("villagerphrases.config.reset.message"),
+            Component.translatable("villagerphrases.config.reset.confirm"),
+            CommonComponents.GUI_CANCEL));
     }
 
     private void apply() {
