@@ -9,7 +9,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.packs.resources.ResourceManager;
 
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,16 +28,15 @@ public final class IronGolemPhrasesData {
     private IronGolemPhrasesData() {}
 
     public static void load(ResourceManager manager) {
-        PHRASES_BY_TAG.clear();
-
         Identifier id = Identifier.fromNamespaceAndPath(VillagerPhrases.MOD_ID, "dialogue/iron_golem_phrases.json");
 
         try {
             var resource = manager.getResource(id)
                 .orElseThrow(() -> new RuntimeException("Could not find " + id));
-            JsonObject json = JsonParser.parseReader(
-                new InputStreamReader(resource.open())
-            ).getAsJsonObject();
+            JsonObject json;
+            try (Reader reader = new InputStreamReader(resource.open(), StandardCharsets.UTF_8)) {
+                json = JsonParser.parseReader(reader).getAsJsonObject();
+            }
 
             JsonArray arr = json.getAsJsonArray(ROOT_KEY);
             List<Phrase> all = new ArrayList<>();
@@ -48,8 +50,7 @@ public final class IronGolemPhrasesData {
                 }
             }
 
-            Map<String, List<Phrase>> byTag = new HashMap<>();
-            byTag.put("all", all);
+            Map<String, List<Phrase>> loaded = new HashMap<>();
             for (String tag : QUERY_TAGS) {
                 List<Phrase> filtered = new ArrayList<>();
                 for (Phrase phrase : all) {
@@ -57,21 +58,19 @@ public final class IronGolemPhrasesData {
                         filtered.add(phrase);
                     }
                 }
-                byTag.put(tag, filtered);
+                loaded.put(tag, filtered);
             }
-            PHRASES_BY_TAG.putAll(byTag);
+
+            PHRASES_BY_TAG.clear();
+            PHRASES_BY_TAG.putAll(loaded);
 
             VillagerPhrases.LOGGER.info("Loaded {} iron golem phrases", all.size());
         } catch (Exception e) {
-            VillagerPhrases.LOGGER.error("Failed to load iron golem phrases", e);
+            VillagerPhrases.LOGGER.error("Failed to load iron golem phrases ({})", e.getClass().getSimpleName());
         }
     }
 
     static List<Phrase> phrasesFor(String tag) {
-        List<Phrase> pool = PHRASES_BY_TAG.get(tag);
-        if (pool == null || pool.isEmpty()) {
-            pool = PHRASES_BY_TAG.get("all");
-        }
-        return pool;
+        return PHRASES_BY_TAG.getOrDefault(tag, Collections.emptyList());
     }
 }

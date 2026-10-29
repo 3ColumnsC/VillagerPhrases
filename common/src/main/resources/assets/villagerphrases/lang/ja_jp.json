@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "村人のメッセージ間隔",
   "villagerphrases.config.iron_golem_cooldown": "アイアンゴーレムのメッセージ間隔",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "適用"
+  "villagerphrases.config.apply": "適用",
+  "villagerphrases.config.reset": "デフォルトに戻す",
+  "villagerphrases.config.reset.title": "すべての設定をリセットしますか？",
+  "villagerphrases.config.reset.message": "VillagerPhrasesのすべての設定がデフォルトに戻ります。",
+  "villagerphrases.config.reset.confirm": "リセット"
 }

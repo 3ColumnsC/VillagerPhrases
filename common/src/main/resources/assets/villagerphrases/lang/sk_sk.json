@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Odstup medzi správami dedinčanov",
   "villagerphrases.config.iron_golem_cooldown": "Odstup medzi správami železného golema",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Použiť"
+  "villagerphrases.config.apply": "Použiť",
+  "villagerphrases.config.reset": "Obnoviť predvolené",
+  "villagerphrases.config.reset.title": "Obnoviť všetky nastavenia?",
+  "villagerphrases.config.reset.message": "Tým sa obnovia všetky nastavenia VillagerPhrases na predvolené hodnoty.",
+  "villagerphrases.config.reset.confirm": "Obnoviť"
 }

@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Gyventojų pranešimų intervalas",
   "villagerphrases.config.iron_golem_cooldown": "Geležinio golemo pranešimų intervalas",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Taikyti"
+  "villagerphrases.config.apply": "Taikyti",
+  "villagerphrases.config.reset": "Atkurti numatytuosius",
+  "villagerphrases.config.reset.title": "Atkurti visus nustatymus?",
+  "villagerphrases.config.reset.message": "Tai atkurs visus „VillagerPhrases“ nustatymus į numatytąsias reikšmes.",
+  "villagerphrases.config.reset.confirm": "Atkurti"
 }

@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Falusiak üzenetei közti várakozás",
   "villagerphrases.config.iron_golem_cooldown": "Vasgólem üzenetei közti várakozás",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Alkalmaz"
+  "villagerphrases.config.apply": "Alkalmaz",
+  "villagerphrases.config.reset": "Visszaállítás alapértelmezettre",
+  "villagerphrases.config.reset.title": "Minden beállítás visszaállítása?",
+  "villagerphrases.config.reset.message": "Ez visszaállítja az összes VillagerPhrases-beállítást az alapértelmezett értékekre.",
+  "villagerphrases.config.reset.confirm": "Visszaállítás"
 }

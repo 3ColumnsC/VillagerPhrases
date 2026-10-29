@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Külaelanike sõnumite ooteaeg",
   "villagerphrases.config.iron_golem_cooldown": "Raudgolemi sõnumite ooteaeg",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Rakenda"
+  "villagerphrases.config.apply": "Rakenda",
+  "villagerphrases.config.reset": "Lähtesta vaikeväärtustele",
+  "villagerphrases.config.reset.title": "Kas lähtestada kõik seaded?",
+  "villagerphrases.config.reset.message": "See lähtestab kõik VillagerPhrasesi seaded vaikeväärtustele.",
+  "villagerphrases.config.reset.confirm": "Lähtesta"
 }
