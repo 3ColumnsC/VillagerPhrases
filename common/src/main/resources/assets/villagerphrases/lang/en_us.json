@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Villager Message Cooldown",
   "villagerphrases.config.iron_golem_cooldown": "Iron Golem Message Cooldown",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Apply"
+  "villagerphrases.config.apply": "Apply",
+  "villagerphrases.config.reset": "Reset to default",
+  "villagerphrases.config.reset.title": "Reset all settings?",
+  "villagerphrases.config.reset.message": "This will restore all VillagerPhrases settings to their defaults.",
+  "villagerphrases.config.reset.confirm": "Reset"
 }

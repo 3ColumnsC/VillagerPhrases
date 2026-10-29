@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Nachrichten-Abklingzeit der Dorfbewohner",
   "villagerphrases.config.iron_golem_cooldown": "Nachrichten-Abklingzeit des Eisengolems",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Übernehmen"
+  "villagerphrases.config.apply": "Übernehmen",
+  "villagerphrases.config.reset": "Auf Standard zurücksetzen",
+  "villagerphrases.config.reset.title": "Alle Einstellungen zurücksetzen?",
+  "villagerphrases.config.reset.message": "Dadurch werden alle VillagerPhrases-Einstellungen auf ihre Standardwerte zurückgesetzt.",
+  "villagerphrases.config.reset.confirm": "Zurücksetzen"
 }

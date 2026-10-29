@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Recarga das mensagens dos aldeões",
   "villagerphrases.config.iron_golem_cooldown": "Recarga das mensagens do golem de ferro",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Aplicar"
+  "villagerphrases.config.apply": "Aplicar",
+  "villagerphrases.config.reset": "Restaurar predefinições",
+  "villagerphrases.config.reset.title": "Restaurar todas as definições?",
+  "villagerphrases.config.reset.message": "Isso restaurará todas as definições do VillagerPhrases para os valores predefinidos.",
+  "villagerphrases.config.reset.confirm": "Restaurar"
 }

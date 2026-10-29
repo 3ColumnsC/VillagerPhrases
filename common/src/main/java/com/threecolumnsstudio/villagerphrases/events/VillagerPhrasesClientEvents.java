@@ -14,7 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
-import java.util.UUID;
 
 public final class VillagerPhrasesClientEvents {
 
@@ -31,6 +30,7 @@ public final class VillagerPhrasesClientEvents {
 
     public static void onInteract(Player player, Level level, InteractionHand hand, Entity target) {
         if (!level.isClientSide()) return;
+        VillagerPhrasesState.ensureLevel(level);
         if (hand != InteractionHand.MAIN_HAND) return;
         if (!(target instanceof Villager villager)) return;
 
@@ -47,7 +47,9 @@ public final class VillagerPhrasesClientEvents {
     }
 
     public static void onAttack(Player player, Entity target) {
-        if (!player.level().isClientSide()) return;
+        Level level = player.level();
+        if (!level.isClientSide()) return;
+        VillagerPhrasesState.ensureLevel(level);
 
         VillagerPhrasesConfig config = VillagerPhrasesConfigLoader.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
@@ -66,7 +68,7 @@ public final class VillagerPhrasesClientEvents {
         if (VillagerPhrasesState.isGlobalMessageCooldown(player.level(), config.globalMessageCooldownTicks)) return;
         if (player.getRandom().nextFloat() >= HIT_CHANCE) return;
 
-        String key = PhraseSelector.nextHitKey(VillagerPhrasesData.professionId(villager), config);
+        String key = PhraseSelector.nextHitKey(VillagerPhrasesData.professionId(villager));
         if (key != null) {
             player.sendSystemMessage(PhraseMessageFormatter.formatMessage(villager, key, player));
             VillagerPhrasesState.markAnyMessage(player.level());
@@ -88,12 +90,14 @@ public final class VillagerPhrasesClientEvents {
     }
 
     public static void onClientTick(Level level, Player player) {
+        VillagerPhrasesState.ensureLevel(level);
+
         VillagerPhrasesConfig config = VillagerPhrasesConfigLoader.getInstance();
         if (config == null || !config.isAnyEnabled()) return;
 
         checkDeaths(level, player, config);
 
-        if (level.getGameTime() % PROXIMITY_INTERVAL_TICKS != 0) return;
+        if (!VillagerPhrasesState.isProximityCheckDue(level, PROXIMITY_INTERVAL_TICKS)) return;
 
         if (checkIronGolemProximity(level, player, config)) return;
 
@@ -143,11 +147,11 @@ public final class VillagerPhrasesClientEvents {
 
     private static String situationalKey(Level level, VillagerPhrasesConfig config, String profession) {
         if (level.isDarkOutside() && config.enableNightPhrases && level.getRandom().nextFloat() < SITUATIONAL_CHANCE) {
-            String key = PhraseSelector.nextNightKey(profession, config);
+            String key = PhraseSelector.nextNightKey(profession);
             return key != null ? key : PhraseSelector.nextProximityKey(profession, config);
         }
         if (level.isRaining() && config.enableRainPhrases && level.getRandom().nextFloat() < SITUATIONAL_CHANCE) {
-            String key = PhraseSelector.nextRainKey(profession, config);
+            String key = PhraseSelector.nextRainKey(profession);
             return key != null ? key : PhraseSelector.nextProximityKey(profession, config);
         }
         return PhraseSelector.nextProximityKey(profession, config);
@@ -156,19 +160,21 @@ public final class VillagerPhrasesClientEvents {
     private static void checkDeaths(Level level, Player player, VillagerPhrasesConfig config) {
         long now = level.getGameTime();
 
-        for (UUID uuid : VillagerPhrasesState.recentlyHitUuids()) {
-            if (now - VillagerPhrasesState.hitTick(uuid) > DEATH_TRACK_TICKS) {
-                VillagerPhrasesState.removeRecentlyHit(uuid);
+        var iterator = VillagerPhrasesState.recentlyHitIterator();
+        while (iterator.hasNext()) {
+            var entry = iterator.next();
+            if (now - entry.getValue() > DEATH_TRACK_TICKS) {
+                iterator.remove();
                 continue;
             }
 
-            Entity entity = level.getEntity(uuid);
+            Entity entity = level.getEntity(entry.getKey());
             if (entity instanceof Villager villager && villager.isDeadOrDying()) {
                 announceVillagerDeath(player, level, config, villager);
-                VillagerPhrasesState.removeRecentlyHit(uuid);
+                iterator.remove();
             } else if (entity instanceof IronGolem golem && golem.isDeadOrDying()) {
                 announceIronGolemDeath(player, level, config, golem);
-                VillagerPhrasesState.removeRecentlyHit(uuid);
+                iterator.remove();
             }
         }
     }
@@ -176,7 +182,7 @@ public final class VillagerPhrasesClientEvents {
     private static void announceVillagerDeath(Player player, Level level, VillagerPhrasesConfig config, Villager villager) {
         if (!config.enableDeathPhrases) return;
 
-        String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager), config);
+        String key = PhraseSelector.nextDeathKey(VillagerPhrasesData.professionId(villager));
         if (key != null) {
             player.sendSystemMessage(PhraseMessageFormatter.formatMessage(villager, key, player));
             VillagerPhrasesState.markAnyMessage(level);

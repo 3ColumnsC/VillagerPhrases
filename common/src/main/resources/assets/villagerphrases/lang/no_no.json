@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Ventetid mellom landsbyboermeldinger",
   "villagerphrases.config.iron_golem_cooldown": "Ventetid mellom jerngolemmeldinger",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Bruk"
+  "villagerphrases.config.apply": "Bruk",
+  "villagerphrases.config.reset": "Tilbakestill til standard",
+  "villagerphrases.config.reset.title": "Tilbakestille alle innstillinger?",
+  "villagerphrases.config.reset.message": "Dette vil tilbakestille alle VillagerPhrases-innstillinger til standardverdiene.",
+  "villagerphrases.config.reset.confirm": "Tilbakestill"
 }

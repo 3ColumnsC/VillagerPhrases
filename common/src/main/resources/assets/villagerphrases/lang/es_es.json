@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Cooldown de mensajes de aldeanos",
   "villagerphrases.config.iron_golem_cooldown": "Cooldown de mensajes del gólem de hierro",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Aplicar"
+  "villagerphrases.config.apply": "Aplicar",
+  "villagerphrases.config.reset": "Restablecer valores predeterminados",
+  "villagerphrases.config.reset.title": "¿Restablecer todos los ajustes?",
+  "villagerphrases.config.reset.message": "Esto restaurará todos los ajustes de VillagerPhrases a sus valores predeterminados.",
+  "villagerphrases.config.reset.confirm": "Restablecer"
 }

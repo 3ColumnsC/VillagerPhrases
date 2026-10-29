@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Wachttijd tussen dorpelingberichten",
   "villagerphrases.config.iron_golem_cooldown": "Wachttijd tussen ijzergolemberichten",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Toepassen"
+  "villagerphrases.config.apply": "Toepassen",
+  "villagerphrases.config.reset": "Terugzetten naar standaard",
+  "villagerphrases.config.reset.title": "Alle instellingen resetten?",
+  "villagerphrases.config.reset.message": "Hiermee worden alle VillagerPhrases-instellingen teruggezet naar de standaardwaarden.",
+  "villagerphrases.config.reset.confirm": "Resetten"
 }

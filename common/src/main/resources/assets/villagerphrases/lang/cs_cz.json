@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Prodleva zpráv vesničanů",
   "villagerphrases.config.iron_golem_cooldown": "Prodleva zpráv železného golema",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Použít"
+  "villagerphrases.config.apply": "Použít",
+  "villagerphrases.config.reset": "Obnovit výchozí",
+  "villagerphrases.config.reset.title": "Obnovit všechna nastavení?",
+  "villagerphrases.config.reset.message": "Tím se obnoví všechna nastavení VillagerPhrases na výchozí hodnoty.",
+  "villagerphrases.config.reset.confirm": "Obnovit"
 }

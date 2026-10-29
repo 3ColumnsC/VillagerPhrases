@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Kyläläisten viestien viive",
   "villagerphrases.config.iron_golem_cooldown": "Rautagolemin viestien viive",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Käytä"
+  "villagerphrases.config.apply": "Käytä",
+  "villagerphrases.config.reset": "Palauta oletukset",
+  "villagerphrases.config.reset.title": "Palautetaanko kaikki asetukset?",
+  "villagerphrases.config.reset.message": "Tämä palauttaa kaikki VillagerPhrases-asetukset oletusarvoihin.",
+  "villagerphrases.config.reset.confirm": "Palauta"
 }

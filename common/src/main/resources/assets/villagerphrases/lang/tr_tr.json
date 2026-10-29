@@ -649,5 +649,9 @@
   "villagerphrases.config.global_cooldown": "Köylü mesajları arası bekleme",
   "villagerphrases.config.iron_golem_cooldown": "Demir Golem mesajları arası bekleme",
   "villagerphrases.config.cooldown_value": "%s: %ss",
-  "villagerphrases.config.apply": "Uygula"
+  "villagerphrases.config.apply": "Uygula",
+  "villagerphrases.config.reset": "Varsayılana sıfırla",
+  "villagerphrases.config.reset.title": "Tüm ayarlar sıfırlansın mı?",
+  "villagerphrases.config.reset.message": "Bu, tüm VillagerPhrases ayarlarını varsayılan değerlerine sıfırlar.",
+  "villagerphrases.config.reset.confirm": "Sıfırla"
 }
